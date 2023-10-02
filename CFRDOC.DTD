@@ -1,0 +1,3230 @@
+<!DOCTYPE CFRDOC   [
+<!-- ============================================================= -->
+<!--  MODULE:    US Government Printing Office  DTD for -->
+<!--             OFR Code of Federal Regulations Publications      -->
+<!--             (Except Title 3, Presidential Documents)          -->
+<!--  VERSION:   6.8                                               -->
+<!--  DATE:      August 2002                                       -->
+<!-- ============================================================= 
+     Formal Public Identifier:
+"-//USGPO//DTD Code of Federal Regulations Volumes v4.8 20020830//EN"
+
+This file represents %cfrdoc.dtd;
+
+     ============================================================= -->
+<!--  SYSTEM:    U.S. Government Printing Office DTDs              -->
+<!--  PURPOSE:   Defines the elements necessary to produce the     -->
+<!--             Office of Federal Regulation printed publications -->
+<!--             for all Volumes of the Code of Federal            -->
+<!--             Regulations except Title 3, the Presidential      -->
+<!--             Documents volume.  (The Element definitions       -->
+<!--             for that publication are contained in the files   -->
+<!--             CFRPRES.LOC and .ENT)                             -->
+<!--                                                               -->
+<!--             This file may be used for the production of the   -->
+<!--             continuously updated electronic version of these  -->
+<!--             publications, known as the EFEDREG.               -->
+<!-- ============================================================= -->
+<!--  CREATED FOR:                                                 -->
+<!--             United States Government Printing Office          -->
+<!--  ORIGINAL CREATION DATE:                                      -->
+<!--             May 15, 1985                                      -->
+<!-- ============================================================= -->
+<!--                                                               -->
+<!--            NOTE - This is a preliminary DTD for the           -->
+<!--            Code of Federal Regulations publications           -->
+<!--                                                               -->
+<!--     Original version (1996.05.15) was started May 15, 1996    -->
+<!--                  Current Version 2002.08.30                   -->
+<!--                                                               -->
+<!--                                                               -->
+<!-- This project is still under development. Please be advised    -->
+<!-- that content models and tag listings are subject to change    -->
+<!-- as variations are encountered in processing data.             -->
+<!--                                                               -->
+<!-- For use with the US Government Printing Office MicroComp      -->
+<!-- Typesetting system, the .LOC version of this file MUST reside -->
+<!-- in a \MICROCOM\DTDLOC directory of the drive where MicroComp  -->
+<!-- is installed.                                                 -->
+<!--                                                               -->
+<!-- For SGML parsing, there must be a \PUBLIC directory           -->
+<!-- containing the following files: CATALOG, GPOCHARS.ENT, and    -->
+<!-- GPODISPL.ENT, plus .ENT files for any file referenced in      -->
+<!-- GPOCHARS.ENT.  The path statements in CATALOG, GPOCHARS.ENT,  -->
+<!-- and GPODISPL.ENT must be to the \PUBLIC directory, and the    -->
+<!-- file extensions there must be .ENT.  The .ENT files in the    -->
+<!-- \PUBLIC directory must contain the reserved word SDATA        -->
+<!-- followed by the entity name repeated and enclosed within " ". -->
+<!-- They are not the same as the .ENT files in the                -->
+<!-- \MICROCOM\DTDLOC directory.  The .DTD version of this file    -->
+<!-- does not contain the path to the files GPOCHARS.ENT and       -->
+<!-- GPODISPL.ENT                                                  -->
+<!--                                                               -->
+<!-- For XML parsing, there must be a directory containing the     -->
+<!-- following files: CATALOG, GPOCHARS.ENT, and GPODISPL.ENT,     -->
+<!-- plus .ENT files for any file referenced in GPOCHARS.ENT. The  -->
+<!-- path statements in CATALOG, GPOCHARS.ENT, and GPODISPL.ENT    -->
+<!-- must be to this directory, and the file extensions there must -->
+<!-- be .ENT.  The .ENT files in this directory do not contain the -->
+<!-- reserved word SDATA and must contain the unicode values of    -->
+<!-- the entities, enclosed within " ". They are not the same as   -->
+<!-- the .ENT files in the \PUBLIC directory.  The .DTD version of -->
+<!-- this file must contain the path to the files GPOCHARS.ENT and -->
+<!-- GPODISPL.ENT.  If using MicroComp for typesetting, these      -->
+<!-- files can all reside in the \MICROCOM\DTDLOC directory.       -->
+<!--                                                               -->
+<!-- For MicroComp typesetting, there must be a \MICROCOM\DTDLOC   -->
+<!-- directory containing the .LOC version of this file and the    -->
+<!-- following additional files: CATALOG, GPOCHARS.LOC, and        -->
+<!-- GPODISPL.LOC, plus .LOC files for any file referenced in      -->
+<!-- GPOCHARS.LOC. The path statements in CATALOG, GPOCHARS.LOC,   -->
+<!-- and GPODISPL.LOC must be to the \MICROCOM\DTDLOC directory,   -->
+<!-- and the file extensions must be .LOC.                         -->
+<!--                                                               -->
+<!-- As other ISO standard entity files are referenced later,      -->
+<!-- they will be added to these lists. - WRW                      -->
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--                        CHANGE HISTORY                         -->
+<!-- ============================================================= -->
+<!-- AUGUST 2002 REVISION (USGPO/WRW)               v.6.7 20020830
+08/18/02  Added "EAR" to "SUBJIND" - WRW
+08/14/02  Changed "HED" to "HED" in "SUBJIND" - WRW
+          Removed ambiguous"(EXT-XREF | INT-XREF)" after "HED" in 
+            "SUBPART" - WRW
+                                                                   -->
+<!-- JULY 2002 REVISION (USGPO/WRW)                 v.6.7 20020731
+07/24/02  Added "(EXT-XREF | INT-XREF)" to main OR group of 
+            "SUBPART" - WRW
+07/03/02  Added "MATH" to OR group of "EFFDNOT", "EFFDNOTI", & 
+            "EFFTNOTP" - WRW
+                                                                   -->
+<!-- MAY 2002 REVISION (USGPO/WRW)                  v.6.5 20020531
+05/24/02  Added "FTNT" to OR group of "NOTE" - WRW
+05/13/02  Added "APPRO" to OR group in "ANNEX", "APPENDIX", 
+            "ATTACH", "ENCLO", "EXAMPLE", "EXHIBIT", "EXTRACT", 
+            "FIGURE", "GUIDE", "SCHED", "SFAR", "SUPPLE", & 
+            "TABLE", per KP of OFR - WRW
+          Added "P" to main OR group of "SUBPART" - WRW
+          Removed "CGCINDEX" & "PTCINDEX" from "BMTR", per KP of 
+            OFR - WRW
+          Added "EDNOTE", "EFFDNOT", "EFFDNOTI", & "EFFDNOTP" to 
+            last OR group of "TOC", per KP of OFR - WRW
+          Added "CROSSREF", "EDNOTE" & "P" to "SUBCHAP", per KP 
+            of OFR - WRW
+          Added "RESERVED" to "SUBTITLE", per KP of OFR - WRW
+          Added "APPRO" to "PART", per KP of OFR - WRW
+          Changed "APPRO" in "REGTEXT" from Q04 I20 to ^P for 
+            consistency with all other uses - WRW
+                                                                   -->
+<!-- APRIL 2002 REVISION (USGPO/WRW)                v.6.4 20020430
+04/30/02  Changed "THED" in "ANNEX", "APPENDIX", "ATTACH", 
+            "ENCLO", "FIGURE", "GUIDE", "SCHED", "SFAR", "SUPPLE", 
+            & "TABLE" from I36 to I36 T5 - WRW
+                                                                   -->
+<!-- FEBRUARY 2002 REVISION (USGPO/WRW)             v.6.1 20020228
+02/11/02  Added "AUTH" into "REVTXT" - WRW
+                                                                   -->
+<!-- NOVEMBER 2001 REVISION (USGPO/WRW)             v.4.8 20011231
+11/01/00  Deleted first "CROSSREF" from "CFRTOC" - WRW
+          Deleted first "CROSSREF" & last "EDNOTE" from 
+            "CFRTOC" - WRW
+                                                                   -->
+<!-- AUGUST 2001 REVISION (USGPO/WRW)               v.4.8 20010831
+08/16/00  Added optional "PARTIND" group at end of "PART" - WRW
+08/13/01  Added optional "STARS" after "SECHD" in "CONTENTS" - WRW
+                                                                   -->
+<!-- JULY 2001 REVISION (USGPO/WRW)                 v.4.7 20010731
+07/27/01  Removed Elements "ENDPGFIT", "P1-1", & "STRPGFIT", 
+            because not used anywhere - WRW
+          Changed "CDATA" in "URL" to "(CDATA)" to make it XML 
+            compliant - WRW
+07/23/01  Added "PRTPAGE" at start of "SUPPLPUB" - WRW
+                                                                   -->
+<!-- ============================================================= -->
+<!--                                                               -->
+<!--                FOR CHANGES PRIOR TO JULY 1, 2000,             -->
+<!--             SEE THE FILE \MICROCOM\DTDLOC\CFRDOC.HST          -->
+<!-- ============================================================= -->
+<!--                                                               -->
+<!--                       SPECIAL CHARACTERS                      -->
+<!-- ============================================================= -->
+<!-- The table below contains the substitutions used by the        -->
+<!-- MicroComp Processing Instructions <?USGPO Go Normal?>,        -->
+<!-- <?USGPO Go Turn?>", and <?USGPO Go Wide?>.                    -->
+<!--                                                               -->
+<? Modify Format= "Normal '8006' Wide '8006' Turn '8006' "?>
+<? Modify Format= "Normal '8002' Wide '8016' Turn '8017' "?>
+<? Modify Format= "Normal '8003' Wide '8018' Turn '8019' "?>
+<? Modify Format= "Normal '8010' Wide '8016' Turn '8017' "?>
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--                         EXTERNAL ENTITIES                     -->
+<!-- ============================================================= -->
+<!ENTITY % GPOCHARS.ENT PUBLIC 
+"-//USGPO//DTD Character references available in Microcomp 20000601//EN">
+
+%GPOCHARS.ENT; 
+
+<!-- Accesses all special characters available within the          -->
+<!-- Microcomp SGML/XML capability                                 -->
+
+<!ENTITY % GPODISPL.ENT PUBLIC 
+"-//USGPO//DTD GPOTABLE, GPH, and MATH Models 20001027//EN">
+
+%GPODISPL.ENT; 
+
+<!-- Accesses all GPO elements for <GPOTABLE>, <GPH> (graphic),    -->
+<!-- and <MATH> (equation) within the Microcomp SGML/XML           -->
+<!-- capability                                                    -->
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--                         PARAMETER ENTITIES                    -->
+<!-- ============================================================= -->
+<!-- Because Parameter Entities are not allowed in the             -->
+<!-- WordPerfect XML editor, these Parameter entities are no       -->
+<!-- longer used.  The relevant portions have been incorporated    -->
+<!-- into the Elements as necessary.                               -->
+
+<!-- ENTITY % BETTEXT  "EXT-XREF 
+                   | FNC | FNP | INT-XREF 
+                   | PRTPAGE | Q" -->
+<!-- GPO processing instructions that must fall between elements   -->
+<!-- within the data.                                              -->
+
+<!-- ENTITY % INTEXT   "AC | E 
+                   | FR | FRLINK | FTREF 
+                   | H | PRTPAGE 
+                   | SU | URL" -->
+<!-- GPO processing instructions and function codes that may       -->
+<!-- appear within the data stream.                                -->
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--    MAIN ENTRY FOR CODE OF FEDERAL REGULATIONS PUBLICATIONS    -->
+<!-- ============================================================= -->
+<!ELEMENT CFRDOC     - o (REGTEXT+ 
+                        | (AMDDATE?, 
+                           (PRTPAGE | Q)*, 
+                           (FMTR | TITLE | BMTR))+)>
+  <!ATTLIST CFRDOC       ED    CDATA  #IMPLIED
+                         REV   CDATA  #IMPLIED>
+                         
+<!ELEMENT FDSYS      - o ((CFRTITLE | CFRTITLETEXT | VOL | DATE | ORIGINALDATE | 
+						COVERONLY | TITLE | GRANULENUM | HEADING | ANCESTORS)*)>
+						
+<!ELEMENT ORIGINALDATE      - o (#PCDATA)>
+<!ELEMENT COVERONLY      - - (#PCDATA)>
+<!ELEMENT GRANULENUM      - - (#PCDATA)>
+<!ELEMENT HEADING      - - (#PCDATA)>
+<!ELEMENT ANCESTORS      - - (PARENT)>
+<!ELEMENT PARENT      - - (#PCDATA)>
+  <!ATTLIST PARENT       HEADING    CDATA  #IMPLIED
+                         SEQ   CDATA  #IMPLIED>
+<!ELEMENT CFRTITLETEXT      - - (#PCDATA)>
+<!ELEMENT VOL      - - (#PCDATA)>
+
+<!-- Primary Document Type for Code of Federal Regulations         -->
+<!-- publications. Attributes are for the initials of the [ED]itor -->
+<!-- and [REV]isor, and are for ECFR only.                         -->
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--                    BIBLIOGRAPHIC INFORMATION                  -->
+<!-- ============================================================= -->
+<!ELEMENT BIBINF   - - (BTI, BTISB?, BTICT?, 
+                        BSUBTI?, BSUBTISB?, 
+                        BSUBTICT?, BCH?, BCHSB?, 
+                        BCHCT?, BSUBCH?, BSUBCHSB?, 
+                        BSUBCHCT?, BPT?, BPTSB?, 
+                        BPTCT?, BIBSRT?, BSUBPT?, 
+                        BSUBPTSB?, BSUBPTCT?, 
+                        BSUBGP?, BSUBGPSB?, 
+                        BSUBGPCT?, BSEC?, BSECSB?, 
+                        BSECCT?, BAPP?, BAPPSB?, 
+                        BAPPCT?, BFRPAGE?, 
+                        BEFFDATE?, BID?, BREGHD?)>
+<!-- Bibliographic information for ECFR, does not print in the     -->
+<!-- paper version of the CFR. The Element BIBINF contains the     -->
+<!-- B___ elements listed below. [annex, appendix, attach,         -->
+<!-- chapter, enclo, figure, guide, part, regtext, sched, section, -->
+<!-- sfar, subchap, subjgrp, subpart, subtitle, supple, table,     -->
+<!-- title, tsect, wsect]                                          -->
+
+<!ELEMENT BTI      - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BTISB    - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BTICT    - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBTI   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBTISB - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBTICT - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BCH      - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BCHSB    - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BCHCT    - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBCH   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBCHSB - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBCHCT - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BPT      - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BPTSB    - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BPTCT    - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BIBSRT   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBPT   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBPTSB - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBPTCT - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBGP   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBGPSB - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSUBGPCT - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSEC     - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSECSB   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BSECCT   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BAPP     - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BAPPSB   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BAPPCT   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BFRPAGE  - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BEFFDATE - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BID      - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!ELEMENT BREGHD   - - (#PCDATA | AC | E | FR 
+                      | FRLINK | FTREF | SU)*>
+<!-- Testing for bibliographic data.  Used in the ECFR only.       -->
+<!-- [annex, appendix, attach, chapter, enclo, figure, guide,      -->
+<!-- part, regtext, sched, section, sfar, subchap, subjgrp,        -->
+<!-- subpart, subtitle, supple, table, title]                      -->
+<!--                                                               -->
+<!-- ============================================================= -->
+<!--                    GENERAL ELEMENT ENTRIES                    -->
+<!-- ============================================================= -->
+<!ELEMENT ABBR     - o (PRTPAGE?, HED, Q?, 
+                        P+)>
+<!-- Abbreviations listing in tables of contents. [cfrtoc, toc] -->
+
+<!ELEMENT AC       - o EMPTY>
+  <!ATTLIST AC         T  CDATA  #REQUIRED>
+<!-- Accent function, entry is one character and must be 0-9, or 
+     a, b or c. [Found in all mixed content elements (those that 
+     contain PCDATA)] -->
+
+<!ELEMENT ACQRUL   - o (PRTPAGE?, HED, 
+                        (EXT-XREF | INT-XREF)*, 
+                        Q?, P, 
+                        (FNC | FNP 
+                       | P | PRTPAGE 
+                       | Q)*, 
+                        AR+)>
+<!-- Used only for Aquisition Rules in Title 20, Chapter 3. 
+     [index] -->
+
+<!ELEMENT ADDR     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Address of organization publishing standards that follow. 
+     Used in "Material Approved for Incorporation by Reference" 
+     section of Backmatter. [chapter in "incorp"] -->
+
+<!ELEMENT AGENCY   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Agency name.  Used only in Backmatter. [alphlist, bsubchin, 
+     chapter] -->
+
+<!ELEMENT AGHD     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Repeatable "Agency" head.  Used only in Alphabetical List of 
+     Agencies in Backmatter. [alphlist] -->
+
+<!ELEMENT ALL      - o (#PCDATA)*>
+<!-- Used for allmark at end of Backmatter. [alphlist, lsa] -->
+
+<!ELEMENT ALPHHD   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Alphabet separator heads in indexes. Used only in Backmatter. 
+     [blmindex, bsubchin, chapindx, hhsarind, regindex, subchind] -->
+
+<!ELEMENT ALPHLIST - o (PRTPAGE?, HED, 
+                        (EXT-XREF | INT-XREF)*, 
+                        Q?, REV, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        AGHD, CFRHD, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        ((AGENCY, CFRID*, 
+                          (FNC | FNP 
+                         | PRTPAGE | Q)*)+, 
+                         (SUBAGCY, CFRID, 
+                          (FNC | FNP 
+                         | PRTPAGE | Q)*)*)+, 
+                        ALL?)>
+<!-- Alphabetical List of Agencies Appearing in the CFR. Used only 
+     in Backmatter. [bmtr] -->
+
+<!ELEMENT AMDDATE  - o (#PCDATA)*>
+<!-- Amended date. The date of the Federal Register that last 
+     amendments are from.  Appears only in the ECFR, not in the 
+     printed version. [cfrpres] -->
+
+<!ELEMENT AMDPAR   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Amendatory Instructions language in Regtext. [regtext, 
+     subpart, wide] -->
+
+<!ELEMENT ANCIL    - o (#PCDATA)*>
+<!-- Tag for Ancillaries line on Title Page of Frontmatter. 
+     [titlepg] -->
+
+<!ELEMENT ANNEX    - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED 
+                         | THED | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 | LHD1
+                         | HED | LDRWK 
+                         | MATH | NAME 
+                         | NOTE | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST ANNEX        TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Annex (like Appendix). [part, regtext, revtxt, subchap, subpart, 
+     supersed] -->
+
+<!ELEMENT ANOTE    - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Special tag for "Material Approved for Incorporation by 
+     Reference" section of Backmatter. [chapter] -->
+
+<!ELEMENT ANN      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | PRTPAGE | SU)*>
+<!-- Used for Annex head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT APP      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | PRTPAGE | SU)*>
+<!-- Used for Appendix head entries in tables of contents. 
+     [cfrtoc, contents, regtext, subjgrp, subpart, toc] -->
+
+
+
+<!-- ELEMENT APPENDIX - o (BIBINF?, 
+                        ((PRTPAGE?, RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR, PRTPAGE?, 
+                          (HED | THED -->
+<!-- Suggested change for below -->
+
+
+
+<!ELEMENT APPENDIX - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED | THED 
+                         | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 
+                         | HED | LDRWK  | LHD1 | CTRHD | E
+                         | MATH 
+                         | NAFTA | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST APPENDIX     TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Appendix. [part, regtext, revtxt, subchap, subpart, 
+     supersed] -->
+
+<!ELEMENT APPHED   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Appendix Head, only in Tables of Contents entries. 
+     [toc] -->
+
+<!ELEMENT APPRO    - o (#PCDATA | AC | E 
+                      | FR | FRLINK 
+                      | FTNT | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+  <!ATTLIST APPRO      TYPE  (N | C | T 
+                               | W) "N" >
+<!-- Used for "Approved By" entries.  Attributes denote [N]ormal. 
+     [C]lose (used where Appro comes under another entry that 
+     already has space below it). [T]urn, and [W]ide. [annex, 
+     appendix, attach, enclo, figure, guide, part, regtext, sched, 
+     section, sfar, supple, table, text] -->
+
+<!ELEMENT AR       - o (PRTPAGE?, P, 
+                        (FNC | FNP 
+                       | PRTPAGE | PUBLI 
+                       | Q)+, 
+                        NOTE?)>
+<!-- Used within Acquisiton Rulings, and in the Rescission Notice 
+     section of the Index to Chapter 3 of Title 20. [acqrul, 
+     rescis] -->
+
+<!ELEMENT ATT      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | PRTPAGE | SU)*>
+<!-- Used for Attachment head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT ATTACH   - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED 
+                         | THED | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 | LHD1
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST ATTACH       TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Attachment (like Appendix). [part, regtext, revtxt, subchap, 
+     subpart, supersed] -->
+
+<!ELEMENT AUTH     - o (PRTPAGE?, 
+                        HED, P, 
+                        (EXT-XREF | INT-XREF)*, 
+                        ((PRTPAGE | Q)*, P)*)>
+<!-- Used for "Authority:" entries.  (See also PARAUTH and SECAUTH 
+     used within appendixes, exhibits, & sections). [annex, 
+     appendix, attach, enclo, exhibit, figure, guide, part, regtext, 
+     revtxt, sched, section, sfar, subjgrp, subpart, supple, 
+     table] -->
+
+<!ELEMENT AVAIL    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Availability code in "Material Approved for Incorporation by 
+     Reference" section of Backmatter. [chapter] -->
+
+<!ELEMENT BLMINDEX - o (PRTPAGE?, HED, 
+                        (EXT-XREF | INT-XREF)*, 
+                        Q?, DATE, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        EDNOTE, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        (ALPHHD, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*, 
+                         ((HD, 
+                           (FNC | FNP 
+                          | PRTPAGE | Q)*)? 
+                        | ((HD2 | HD4 | HD6 
+                          | (P, STUB) 
+                          | (P2-3, STUB) 
+                          | (P4-5, STUB) 
+                          | (P6-7, STUB) 
+                          | (P8-9, STUB)), 
+                           (FNC | FNP 
+                          | PRTPAGE | Q)*)+)+)+)>
+<!-- Special Index in Backmatter. [bmtr] -->
+
+<!ELEMENT BMTR     - o (ALPHLIST | FAIDS 
+                      | BLMINDEX | BSUBCHIN 
+                      | CASINDEX | CHAPINDX | CHPINDEX 
+                      | INCORP | LSA | OMBNOS 
+                      | REDES | REGINDEX 
+                      | SSAINDEX 
+                      | TOCTAC | TSCINDEX)+>
+<!-- Backmatter (everything from Finding Aids to end of volume). 
+     [cfrdoc] -->
+
+<!ELEMENT BOXTXT   - - (HD1?, P, PRTPAGE, LHD1)+>
+<!-- Text that is boxed for emphasis. [section, text] -->
+
+<!ELEMENT BSUBCHIN - o ((LRH, RRH)?, 
+                        PRTPAGE?, 
+                        HED, 
+                        (EXT-XREF | INT-XREF)*, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        CHHD, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        AGENCY, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        EDNOTE, 
+                        (FP-1, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*)?, 
+                        PTHD, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        ((ALPHHD, 
+                          (FNC | FNP 
+                         | PRTPAGE | Q)*), 
+                         ((SUBJECT 
+                         | (SUBJL, PT) 
+                         | SUBJECT1 
+                         | (SUBJ1L, PT) 
+                         | SUBJECT2 
+                         | (SUBJ2L, PT) 
+                         | SUBJECT3 
+                         | (SUBJ3L, PT) 
+                         | (SUBJ4L, PT)), 
+                            (FNC | FNP | PRTPAGE 
+                           | Q)*)*)+)>
+<!-- Special index within Backmatter. [bmtr] -->
+
+<!ELEMENT BTITLE   - o (PRTPAGE?, HED, P, GPH,  
+                        ((GPO, 
+                          CITY, FORSALE) 
+                       | ((SPLIT 
+                         | COMBINE), 
+                          GPO, 
+                          CITY, FORSALE)))>
+<!-- Publishing information behind Title Page. [fmtr] -->
+
+<!ELEMENT CASINDEX - o ((LRH, RRH)?, 
+                        PRTPAGE?, 
+                        HED, 
+                        (EXT-XREF | INT-XREF)*, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        LI, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        P, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        (P, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*)?, 
+                        WEDNOTE, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        (PRE?, GPOTABLE))>
+<!-- Special index within Backmatter. [bmtr] -->
+
+<!ELEMENT CFRHD    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | PRTPAGE | SU)*>
+<!-- Repeatable "CFR, Title," etc. head in Alphabetical Listing of 
+     Agencies in Backmatter. [alphlist, chapter] -->
+
+<!ELEMENT CFRID    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | PRTPAGE | SU)*>
+<!-- CFR Title, Subtitle, or Chapter data in second column of 
+     Alphabetical Listing of Agencies in Backmatter. [alphlist] -->
+
+<!ELEMENT CFRNO    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | PRTPAGE | SU)*>
+<!-- Repeatable CFR Number heads in Material Incorporated for 
+     Reference and List of CFR Sections Affected sections of 
+     Backmatter. [chapter, pubyear] -->
+
+<!ELEMENT CFRTITLE - o (PRTPAGE?, 
+                        (LRH, RRH)?, 
+                        TITLEHD+, CFRTOC?)>
+<!-- True Title page of each volume. [title] -->
+
+<!ELEMENT CFRTOC   - o (PRTPAGE?, EDNOTE?, 
+                        SUBTI*, PTHD, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*,
+                        SUBTI2?, 
+                        (CHAPTI | SUBTI 
+                       | APP)*, 
+                        (CROSSREF 
+                       | ABBR)*)>
+<!-- Table of Contents on True Title page. [cfrtitle] -->
+
+<!ELEMENT CHAPINDX - o ((LRH, RRH)?, 
+                        PRTPAGE?, 
+                        HED, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        EDNOTE, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        FP-1, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        PTHD?, 
+                        ((ALPHHD, 
+                          ((SUBJECT 
+                          | (SUBJL, PT)) 
+                         | (SUBJECT1 
+                          | (SUBJ1L, PT)) 
+                         | (SUBJECT2 
+                          | (SUBJ2L, PT)) 
+                         | (SUBJECT3 
+                          | (SUBJ3L, PT)*)*)*), 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*)+)>
+<!-- Special index within Backmatter. [bmtr] -->
+
+<!ELEMENT CHAPNO   - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Chapter Number entries in the "List of CFR Sections 
+     Affected" section in Backmatter and elsewhere. [chapter, 
+     pubyear, subtitle, titleno] -->
+
+<!ELEMENT CHAPTER  - o (BIBINF?, 
+                        (((LRH, RRH)?, 
+                          (TOC*, 
+                           (AMDPAR 
+                          | APPENDIX 
+                          | EFFDNOT | EFFDNOTI 
+                          | EFFDNOTP 
+                          | NOTEPART 
+                          | SUBCHAP | SUBJGRP 
+                        | PART)*))+ 
+                       | ((CHAPNO | AGENCY)+, 
+                           FP-1?, PTHD?, 
+                           CFRHD?, P?, 
+                           (ONOTE?, PARTHD?, 
+                            OWNER?, AVAIL?, 
+                            (FP2 | FP2-2)?, ADDR*, 
+                            (STATE+, ADDR, 
+                             EPA?, REGION*)?, 
+                            ANOTE?, 
+                            ((PUBLI, CFRNO, 
+                              SUBPUBLI*) 
+                           | ((FP, CFRNO?)+, 
+                              (PUBLI1, CFRNO)+)* 
+                           | (JOURNAL, 
+                              (PUBLI1, CFRNO)+)*)*)+)+ 
+                       | ((HED, 
+                           (EXT-XREF | INT-XREF)*) 
+                        | (RESERVED, 
+                           (EXT-XREF | INT-XREF)*))))+>
+  <!ATTLIST CHAPTER      TITLE   CDATA  #IMPLIED
+                         CHRCNT  CDATA  #IMPLIED>
+<!-- Group or container tag for search and retrieval purposes. 
+     Major division within Title and Subtitle.  The Attributes 
+     denote the Title number of the publication and the file size 
+     of the data in the Chapter to be retrieved, and are used for 
+     ECFR only. [incorp, regtext, subtitle, title] -->
+
+<!ELEMENT CHAPTI   - o (PRTPAGE?, 
+                        ((SUBJECT, 
+                          PG?, 
+                          (FNC | FNP 
+                         | PRTPAGE | Q)*) 
+                       | (PT, 
+                          (FNC | FNP 
+                         | PRTPAGE | Q)*, 
+                          ((SUBJECT, PG, 
+                            (FNC | FNP 
+                           | PRTPAGE | Q)*) 
+                         | (RESERVED, 
+                            (FNC | FNP 
+                           | PRTPAGE | Q)*))) 
+                        | SUBCHPHD 
+                        | (RESERVED, 
+                           (FNC | FNP | PRTPAGE 
+                          | Q)*))+)>
+<!-- Chapter division in Tables of Contents sections. [cfrtoc, 
+     titleno, toc] -->
+
+<!ELEMENT CHHD     - o (#PCDATA)>
+<!-- Repeatable "Chap." head. [bsubchin, toctac] -->
+
+<!ELEMENT CHPINDEX - o ((LRH, RRH)?, 
+                        PRTPAGE?, 
+                        HED, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        EDNOTE, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        (SUBJECT, 
+                         P*)+)>
+<!-- Special index within Backmatter. [bmtr] -->
+
+<!ELEMENT CITA     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+  <!ATTLIST CITA       TYPE  (N | C | T 
+                               | W) "N" >
+<!-- Used for citations (usually small type bracketed entries). 
+     Attributes denote [N]ormal. [C]lose (used where Citation 
+     comes under another entry that already has space below it). 
+     [T]urn, and [W]ide. [annex, appendix, attach, enclo, exhibit, 
+     extract, figure, guide, note, part, sched, section, sfar, 
+     subpart, supple, table, text] -->
+
+<!ELEMENT CITE     - o (PRTPAGE?, 
+                        P, 
+                        CITEP)>
+<!-- First text line of Cite this Code page. [fmtr] -->
+
+<!ELEMENT CITEP    - - (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- "To Cite ..." paragraph on Cite this Code page in Frontmatter. 
+     [cite] -->
+
+<!ELEMENT CITY     - o (#PCDATA)*>
+<!-- "WASHINGTON:" date line on back of title page. [btitle] -->
+
+<!ELEMENT CODE     - o (#PCDATA)>
+<!-- Used for Code of Federal Register Graphic on Title Page, 
+     data in text file is for information purposes only and does 
+     not typeset. [titlepg] -->
+
+<!ELEMENT COMBINE  - o (P+, PRTPAGE)>
+<!-- Used when two volumes are combined into one.  Part of the 
+     publishing information behind the Title Page. [btitle] -->
+
+<!ELEMENT CONTAINS - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- "Containing a ..." entry on Title Page of Frontmatter. 
+     [titlepg] -->
+
+<!ELEMENT CONTENTS - - (EAR?, PRTPAGE?, 
+                        SECHD?, 
+                        STARS?, 
+                        (PARTHD?, 
+                         ((SUBPART | SUBJGRP)* 
+                        | (SECTNO, 
+                           ((SUBJECT, FTNT?) 
+                           | RESERVED),
+                           ((FP1-2, 
+                             (FNC | FNP 
+                            | PRTPAGE | Q)*) 
+                          | ((FP2 
+                            | FP2-2), 
+                             (FNC | FNP 
+                            | PRTPAGE | Q)*)*)*)+ 
+                        | (ANN 
+                         | APP 
+                         | ATT 
+                         | ENC 
+                         | EX 
+                         | FIG 
+                         | GUI 
+                         | SCH 
+                         | SF 
+                         | SUP 
+                         | TBL 
+                         | (HD3, 
+                            (FNC | FNP | PRTPAGE 
+                           | Q)*) 
+                         | (FP-2, 
+                            (FNC | FNP | PRTPAGE 
+                           | Q)*))+)+)+)>
+<!-- Table of contents entries. [annex, appendix, attach, enclo, 
+     exhibit, figure, guide, part, regtext, sched, section, sfar, 
+     supple, table] -->
+
+<!ELEMENT CROSSREF - - (PRTPAGE?, 
+                        HED, 
+                         (Q?, P)+)>
+<!-- Used for "Cross Reference:" entries. [cfrtoc, part, section, 
+     subchap, subpart, text, toc] -->
+
+<!ELEMENT DATE     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for date entry. [blmindex, example, exhibit, expla, 
+     extract, titlepg] -->
+
+<!ELEMENT DOCKETHD - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- [annex, appendix, attach, enclo, exhibit, extract, figure, 
+     guide, sched, sfar, supple, table] -->
+
+<!ELEMENT E        - - (#PCDATA | AC 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+  <!ATTLIST E          T  NMTOKEN  #REQUIRED>
+<!-- Emphasis (change face), emphasis type number (T) must be 
+     either two or four digits.
+         With two digit entry, first digit 0 = stay in grid, first 
+     digit 1 to 8 = change to grid, second digit 1 to 5 = change 
+     to typeface within grid.
+         With four digit entry, first three digits are direct grid 
+     call, fourth digit 1 to 5 = change to typeface within grid. 
+     [Found in all mixed content elements (those that contain 
+     PCDATA)] -->
+
+<!ELEMENT EAR      - o (#PCDATA, E)>
+<!-- Used to override default entry for first or last section 
+     number in running head. [annex, appendix, attach, contents, 
+     enclo, example, exhibit, extract, figure, guide, hsarind, 
+     nafta, notepart, part, sched, section, sfar, supple, table, 
+     text, wide] -->
+
+<!ELEMENT EDNOTE   - - (PRTPAGE?, 
+                        HED, 
+                        ((P, 
+                          (FNC | FNP 
+                         | FP 
+                         | HD2 
+                         | P | PRTPAGE | Q 
+                         | REVTXT 
+                         | SUPERSED)*) 
+                       | (TXT, 
+                          (FNC  | FNP 
+                         | PRTPAGE | Q)*, 
+                          P*)))>
+<!-- Used for editorial notes. [annex, appendix, attach, blmindex, 
+     bsubchin, cfrtoc, cgcindex, chapindx, chpindex, enclo, 
+     exhibit, figure, guide, hhsarind, index, ombnos, part, 
+     ptcindex, redes, regindex, regtext, sched, section, sfar, 
+     subchap, subchind, subjgrp, subpart, supple, table, text, 
+     toc] -->
+
+<!ELEMENT EFFDATES - o (#PCDATA)>
+<!-- Used for effective date(s) in amendments to ECFR.  This tag 
+     should not appear in the Federal Register data, but is 
+     needed for display of the ECFR database. [regtext] -->
+
+<!ELEMENT EFFDNOT  - - (PRTPAGE?, 
+                        ((HED, P) 
+                       | FP 
+                       | HD1 | HD2 | HD3 | LHD1
+                       | MATH 
+                       | P | SECHD 
+                       | STARS 
+                       | REVTXT 
+                       | SUPERSED)*)+>
+<!-- Effective Date Notes. [annex, appendix, attach, chapter, 
+     cgcindex, enclo, exhibit, figure, guide, part, regtext, 
+     sched, section, sfar, subchap, subpart, supple, table, text, 
+     toc] -->
+
+<!ELEMENT EFFDNOTI - - (PRTPAGE?, 
+                        ((HED, P) 
+                       | FP 
+                       | HD1 | HD2 | HD3 | LHD1
+                       | MATH 
+                       | P | SECHD 
+                       | STARS 
+                       | REVTXT 
+                       | SUPERSED)*)+>
+<!-- Non-printing Effective Date Notes.  Appears only in the ECFR, 
+     not in the printed version. [annex, appendix, attach, chapter, 
+     cgcindex, enclo, exhibit, figure, guide, part, regtext, sched, 
+     section, sfar, subchap, subpart, supple, table, text, toc] -->
+
+<!ELEMENT EFFDNOTP - - (PRTPAGE?, Q,
+                        ((HED, P) 
+                       | FP 
+                       | HD1 | HD2 | HD3 | LHD1
+                       | MATH 
+                       | P | SECHD 
+                       | STARS 
+                       | REVTXT 
+                       | SUPERSED)*)+>
+<!-- Printing only Effective Date Notes.  Appears only in the 
+     printed version, not in the ECFR. [annex, appendix, attach, 
+     chapter, cgcindex, enclo, exhibit, figure, guide, part, 
+     regtext, sched, section, sfar, subchap, subpart, supple, 
+     table, text, toc] -->
+
+<!ELEMENT EFTNT    - - (P 
+                      | FNC | FNP 
+                      | PRTPAGE | Q)+>
+<!-- Footnote within appendix or extract that stays in place 
+     instead of going to bottom of column. [annex, appendix, 
+     attach, enclo, extract, figure, guide, sched, sfar, supple, 
+     table] -->
+
+<!ELEMENT ENC      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Enclosure head entries in tables of contents. 
+     [cfrtoc, contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT ENCLO    - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED | THED 
+                         | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 | LHD1
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST ENCLO        TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Enclosure (like Appendix). [part, regtext, revtxt, subchap, 
+     subpart, supersed] -->
+
+<!ELEMENT ENTRY    - o (#PCDATA | AC | E | FNC 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for entries in the "List of CFR Sections Affected" 
+     section of the Backmatter that are not Chapter numbers. 
+     [pubyear] -->
+
+<!ELEMENT EPA      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used in "Material Approved for Incorporation by Reference" 
+     section of Backmatter. [chapter] -->
+
+<!ELEMENT EX       - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for exhibit head entries in tables of contents. 
+     [contents] -->
+
+<!ELEMENT EXAMPLE  - - (PRTPAGE?, 
+                        (APPRO | DATE 
+                       | FP 
+                       | FP-1 | FP-2 | FP1-2 
+                       | FP-DASH | FTNT 
+                       | GPH 
+                       | ((TEAR | THED | TSECT)*, 
+                          PRE?, GPOTABLE) 
+                       | HD1 | HD2 | LHD1
+                       | HD3 | HD4 
+                       | (HED, P) 
+                       | LDRWK | MATH 
+                       | P | P-2 | Q 
+                       | WIDE)*)+>
+<!-- Small type text. [annex, appendix, attach, cgcindex, enclo, 
+     examples, extract, figure, guide, ptcindex, regtext, sched, 
+     section, sfar, supple, table, text, tscindex] -->
+
+
+<!ELEMENT EXHIBIT  - - (PRTPAGE?, 
+                        (RESERVED 
+                      | (EAR?, 
+                         ((HED | THED 
+                         | WHED 
+                         | (TEAR?, PRE?, 
+                            GPOTABLE)), 
+                          (EXT-XREF | INT-XREF)*), 
+                         (APPRO | AUTH | CITA 
+                        | CONTENTS 
+                        | DATE | DOCKETHD 
+                        | EAR | EDNOTE 
+                        | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                        | FNC | FNP 
+                        | FP 
+                        | FP-DASH | FP-1 | FP-2 
+                        | FP1-2 | FP2 
+                        | FP2-2 | FP2-3 
+                        | FRP | FRP0 | FTNT 
+                        | GPH 
+                        | (TEAR?, PRE?, 
+                           GPOTABLE) 
+                        | HD1 | HD2 | LHD1
+                        | HD3 | HED 
+                        | LDRWK 
+                        | MATH 
+                        | NAME | NOTE 
+                        | P | P1 | P2 
+                        | P-2 | P-3 | P-DASH 
+                        | PARAUTH | PARTHD 
+                        | PRTPAGE | Q 
+                        | RULE 
+                        | SCOL2 
+                        | SECAUTH | SECHD 
+                        | STARS 
+                        | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                        | WEDNOTE 
+                        | WIDE)+)))>
+<!-- Small type text like Example and Extract. [part, regtext, 
+     section, subchap, subpart, text] -->
+
+<!ELEMENT EXPL     - o (SUBJECT, PG)+>
+<!-- Explanation line at start of Main Table of Cotents. [toc] -->
+
+<!ELEMENT EXPLA    - o (PRTPAGE?, HED, 
+                        (P, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*)+, 
+                        IPAR, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        P, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        SIDEHED+, SIG, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        DATE)>
+<!-- Used for explanatory data following the "Cite this Code" 
+     page in the Frontmatter. [fmtr] -->
+
+<!ELEMENT EXT-XREF - - (#PCDATA)>
+  <!ATTLIST EXT-XREF     HREF   CDATA  #REQUIRED
+                         REFID  CDATA  #IMPLIED>
+<!-- External cross reference. A pointer to the external data 
+     referenced by this element. Attribute must be the external 
+     file name. [acqrul, alphlist, annex, appendix, attach, auth, 
+     enclo, exhibit, extract, figure, guide, part, sched, section, 
+     sfar, subpart, supple, table, text] -->
+
+<!ELEMENT EXTRACT  - - (APPRO | CITA 
+                      | DATE | DOCKETHD 
+                      | EAR | EFTNT 
+                      | EXAMPLE | EXT-XREF 
+                      | FNC | FNP 
+                      | FP 
+                      | FP-1 | FP-2 | FP-DASH 
+                      | FP1-2 | FP2 
+                      | FP2-2 | FP2-3 
+                      | FRP | FRP0 | FTNT 
+                      | GPH 
+                      | ((TEAR | THED | TSECT)*, 
+                         PRE?, GPOTABLE) 
+                      | HD1 | HD2 | HD3 | LHD1
+                      | HD4 | HD5 
+                      | HD6 | HD8 | HALFDASH 
+                      | INT-XREF | LDRWK 
+                      | MATH 
+                      | NAME | NOTE 
+                      | P | P1 | P2 
+                      | P-2 | P-3 | P-DASH 
+                      | PRTPAGE | Q 
+                      | RULE 
+                      | SCOL2 | SFP-2 
+                      | (SECTNO, 
+                         (SUBJECT 
+                        | RESERVED)) 
+                      | STARS 
+                      | WIDE | CTRHD)+>
+<!-- Small text entries, like Example and Exhibit.  May not be 
+     used in all the indexes where it is allowed. [cgcindex, 
+     part, ptcindex, regtext, section, text, tscindex] -->
+
+<!ELEMENT CTRHD      - - (#PCDATA | E | FP | P-3 | HD1 | GPH | Q | LHD1)>
+
+<!ELEMENT FAIDS    - o (PRTPAGE?, 
+                        HED, Q?, 
+                        (((HD1, Q?, 
+                           (SUBJECT1, PG)+) 
+                       | (SUBJECT, PG))+ 
+                      | (P, 
+                         (FNC  | FNP | LHD1
+                        | P | P2 | PRTPAGE 
+                        | Q)+)))>
+<!-- Finding Aids entries [bmtr, toc page in fmtr] -->
+
+<!ELEMENT FIG      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Figure head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT FIGURE   - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED | THED 
+                         | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE | EFFDNOT 
+                         | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 | LHD1
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST FIGURE       TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Figure (like Appendix). [part, regtext, revtxt, subchap, 
+     subpart, supersed] -->
+
+<!ELEMENT FL-2     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Used for left column in leaderwork sections. [ldrwk] -->
+
+<!ELEMENT FMTR     - o (TITLEPG*, BTITLE*, 
+                        TOC*, CITE*, 
+                        EXPLA*, THISTITL*)>
+<!-- Preliminary material of each volume (has roman numeral 
+     folios). [cfrdoc] -->
+
+<!ELEMENT FNC      - o EMPTY>
+<!-- Used to generate a new column.  Processing instruction for 
+     Microcomp to end a column and start a new one. [acqrul, 
+     alphlist, annex, appendix, ar, attach, blmindex, bsubchin, 
+     casindex, cfrtoc, cgcindex, chapindx, chapti, chpindex, 
+     contents, crossref, ednote, eftnt, enclo, exhibit, 
+     expla, extract, faids, figure, guide, nafta, note, ombnos, 
+     part, ptcindex, redes, regindex, regtext, ropind, sched, 
+     section, sfar, sidehed, source, subchind, subpart, supple, 
+     table, text, thistitl, toctac, wide] -->
+
+<!ELEMENT FNP      - o EMPTY>
+<!-- Used to generate a new even page.  Processing instruction 
+     for Microcomp to end a page and start a new one. [acqrul, 
+     alphlist, annex, appendix, ar, attach, blmindex, bsubchin, 
+     casindex, cfrtoc, cgcindex, chapindx, chapti, chpindex, 
+     contents, crossref, ednote, eftnt, enclo, exhibit, expla, 
+     extract, faids, figure, guide, nafta, note, ombnos, part, 
+     ptcindex, redes, regindex, regtext, ropind, sched, section, 
+     sfar, sidehed, source, subchind, subpart, supple, table, text, 
+     thistitl, toctac, wide] -->
+
+<!ELEMENT FORSALE  - o (P+)>
+<!-- Part of publishing information behind Title Page. 
+     [btitle] -->
+
+<!ELEMENT FP       - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Flush paragraph entries. [annex, appendix, attach, cgcindex, 
+     chapter, ednote, effdnot, effdnoti, effdnotp, enclo, example, 
+     exhibit, extract, figure, guide, nafta, note, part, ptcindex, 
+     regindex, regtext, sched, section, sfar, supple, table, 
+     teffdno, teffdnoi, teffdnop, text, tscindex, wide] -->
+
+<!ELEMENT FP-1     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Flush paragraphs with turnovers indented one level. [annex, 
+     appendix, attach, bsubchin, chapindx, chapter, enclo, 
+     example, exhibit, extract, figure, guide, hhsarind, note, 
+     regtext, sched, section, sfar, subchind, supple, table, 
+     text, wide] -->
+
+<!ELEMENT FP-2     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL | CTRHD)*>
+<!-- Flush paragraph with turnovers indented two levels, see also 
+     SFP-2. [annex, appendix, attach, contents, enclo, example, 
+     exhibit, extract, figure, guide, regtext, sched, section, 
+     sfar, subpart, supple, table, text, wide] -->
+
+<!ELEMENT FP-DASH  - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Used for flush paragraphs that fill with dashes. [annex, 
+     appendix, attach, enclo, example, exhibit, extract, figure, 
+     guide, sched, sfar, supple, table, wide] -->
+
+<!ELEMENT FP1      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- First level indented flush paragraph. [nafta] -->
+
+<!ELEMENT FP1-2    - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Paragraph, first line indented one em and turnovers indented 
+     two ems.  Same as P-2, which should be used instead. [annex, 
+     appendix, attach, contents, enclo, example, exhibit, extract, 
+     figure, guide, regtext, sched, section, sfar, subjgrp, 
+     textsupple, table, ] -->
+
+<!ELEMENT FP2      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Second level flush paragraph, all lines indented two ems.  
+     All instances of FP2-2 should be changed to this. [annex, 
+     appendix, attach, chapter, contents, enclo, exhibit, extract, 
+     figure, guide, nafta, sched, section, sfar, subjgrp, supple, 
+     table, text] -->
+
+<!ELEMENT FP2-2    - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Second level indented paragraph with turnovers indented two 
+     levels also.   Same as FP2, which should always be used. 
+     Eventually, this tag should be removed. [annex, appendix, 
+     attach, chapter, contents, enclo, exhibit, extract, figure, 
+     guide, section, sched, sfar, subjgrp, supple, table, text] -->
+
+<!ELEMENT FP2-3    - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Second level indented paragraph with turnovers indented 
+     three levels. [annex, appendix, attach, enclo, exhibit, 
+     extract, figure, guide, sched, sfar, supple, table] -->
+
+<!ELEMENT FP3      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Third level indented flush paragraph. [nafta] -->
+
+<!ELEMENT FP4      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Fourth level indented flush paragraph. [nafta] -->
+
+<!ELEMENT FR       - - (#PCDATA)>
+<!-- Fraction function. [Found in all mixed content elements 
+     (those that contain PCDATA)] -->
+
+<!ELEMENT FRLINK   - - (#PCDATA)>
+<!-- Used in the ECFR only, for Hypertext links to other files on 
+     the web. [Found in all mixed content elements (those that 
+     contain PCDATA) except LRH and RRH] -->
+
+<!ELEMENT FRP      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Flush right material, actually held in 1 em from right 
+     margin. [annex, appendix, attach, enclo, exhibit, extract, 
+     figure, guide, sched, sfar, supple, table] -->
+
+<!ELEMENT FRP0     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- True flush right material. [annex, appendix, attach, enclo, 
+     exhibit, extract, figure, guide, sched, sfar, supple, table] -->
+
+<!ELEMENT FTNT     - - (P | PRTPAGE | Q)+>
+<!-- Footnote entry. [annex, appendix, appro, attach, cgcindex, 
+     contents, enclo, example, exhibit, extract, figure, guide, 
+     parauth, part, ptcindex, pubyear, regindex, regtext, sched, 
+     secauth, section, sfar, subchind, subjgrp, subpart, 
+     supple, table, text, tochd, tscindex] -->
+
+<!ELEMENT FTREF    - o EMPTY>
+<!-- Footnote reference, this is a GPO processing instruction 
+     that references in a footnote. [Found in all mixed content 
+     elements (those that contain PCDATA)] -->
+
+<!--ELEM  GPH          defined in %gpodispl.ent; module          -->
+
+<!ELEMENT GPO      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used in publication data behind Title Page. [btitle] -->
+
+<!--ELEM  GPOTABLE     defined in %gpodispl.ent; module          -->
+
+<!ELEMENT GROUPHD  - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used only in the main Table of Contents. [toc] -->
+
+<!ELEMENT GUI      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Guide head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT GUIDE    - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED 
+                         | THED | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 | LHD1
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST GUIDE        TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Guide (like Appendix). [part, regtext, revtxt, subchap, 
+     subpart, supersed] -->
+
+<!ELEMENT H        - o EMPTY>
+  <!ATTLIST H          U  NMTOKEN  #REQUIRED>
+<!-- Inserts horizontal space immediately, must be two digits (01 
+     to 99 valid). [Found in all mixed content elements (those 
+     that contain PCDATA)] -->
+
+<!ELEMENT HALFDASH - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Emdash line that starts midway through the column (write-in 
+     line?).  DO NOT USE.  This will probably be removed from 
+     .DTD. [extract] -->
+
+<!ELEMENT HD       - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Used only in blmindx in bkmtr.  Could this be given another 
+     name already in use? [blmindex] -->
+
+<!ELEMENT LHD1       - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+
+<!ELEMENT HD1      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Usually used for first level (bold?) head. [annex, appendix, 
+     attach, boxtext, cgcindex, effdnot, effdnoti, effdnotp, 
+     enclo, example, exhibit, extract, faids, figure, guide, 
+     nafta, ptcindex, redes, regindex, regtext, sched, section, 
+     sfar, subjgrp, subpart, supple, table, text, tscindex, 
+     wboxtxt, wide] -->
+
+<!ELEMENT HD2      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Usually used for second level (caps and small caps?) head. 
+     [annex, appendix, attach, blmindex, cgcindex, effdnot, 
+     effdnoti, effdnotp, enclo, example, exhibit, extract, 
+     figure, guide, nafta, ptcindex, regtext, sched, section, 
+     sfar, subjgrp, subpart, supple, table, text, toc, tscindex, 
+     wide] -->
+
+<!ELEMENT HD3      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Usually used for third level (italic?) head. [annex, 
+     appendix, attach, cgcindex, contents, enclo, effdnot, 
+     effdnoti, effdnotp, example, exhibit, extract, figure, 
+     guide, ptcindex, regtext, sched, section, sfar, subjgrp, 
+     subpart, supple, table, text, tscindex, wide] -->
+
+<!ELEMENT HD4      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Usually used for fourth level (roman?) heads. [blmindex, 
+     example, extract, section, text] -->
+
+<!ELEMENT HD5      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- [extract, section, text] -->
+
+<!ELEMENT HD6      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- [blmindex, extract, section, text] -->
+
+<!ELEMENT HD8      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- [extract] -->
+
+<!ELEMENT HED      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU | PRTPAGE)*>
+<!-- Usually the first head within a group or container where the 
+     group or container is designated for search and retrieval 
+     purposes.  May be any size or typeface on output. [abbr, 
+     acqrul, alphlist, annex, appendix, attach, auth, blmindex, 
+     bsubchin, casindex, cgcindex, chapindx, chapter, chpindex, 
+     crossref, ednote, effdnot, effdnoti, effdnotp, enclo, 
+     example, examples, exhibit, expla, faids, figure, guide, 
+     hhsarind, incorp, index, lsa, note, notepart, ombnos, part, 
+     ptcindex, publica, redes, regindex, regtext, rescis, ropind, 
+     sched, sfar, sidehed, source, subchap, subchind, subjgrp, 
+     subjind, subpart, subti, subti2, subtitle, supple, supplpub, 
+     table, teffdno, teffdnoi, teffdnop, thistitl, titlehd, 
+     titleno, titlepg, toc, tochd, toctac, tscindex, wednote, 
+     weffdno, weffdnoi, weffdnop, wide] -->
+
+<!ELEMENT HED1     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- [section, text] -->
+
+<!ELEMENT HHSARIND - o ((LRH, RRH)?, EAR?, 
+                        PRTPAGE?, 
+                        HED, 
+                        SUBCHPHD?,
+                        EDNOTE?, 
+                        FP-1?, PTHD?,
+                        (ALPHHD?, 
+                         ((SUBJECT 
+                         | (SUBJL, SECTNO)) 
+                        | (SUBJECT1 
+                         | (SUBJ1L, SECTNO)) 
+                        | (SUBJECT2 
+                         | (SUBJ2L, SECTNO)) 
+                        | (SUBJECT3 
+                        | (SUBJ3L, SECTNO)) 
+                       | (SUBJ4L, SECTNO)*)*)+)>
+<!-- Special part index. [part] -->
+
+<!ELEMENT INCORP   - o (LRH, RRH, PRTPAGE?, 
+                        HED, 
+                        REV?, P+, CHAPTER+)>
+<!-- Data for "Material Approved for Incorporation by Reference" 
+     section of Backmatter. [bmtr] -->
+
+<!ELEMENT INDEXHD  - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+  <!ATTLIST INDEXHD     TYPE (R 
+                                 | N) "N">
+<!-- Special head in regindex.  Attributes are [R]un in. [N]ew page. 
+     [regindex in bmtr] -->
+
+<!ELEMENT INT-XREF - - (#PCDATA | AC 
+                      | FR | FRLINK | FTREF 
+                      | H | SU)*>
+  <!ATTLIST INT-XREF   HREF  IDREF  #REQUIRED>
+<!-- Internal cross reference.  A pointer to data within the 
+     current file referenced by this element.  Used in ECFR only. 
+     Attribute must be the "ID" of another element in the current 
+     document. [acqrul, alphlist, annex, appendix, attach, attach, 
+     auth, blmindex, bsubchin, casindex, ednote, enclo, exhibit, 
+     extract, figure, guide, nafta, part, ptcindex, sched, 
+     section, sfar, subpart, supple, table, text, thistitl] -->
+
+<!ELEMENT IPAR     - o (P1, STUB)+>
+<!-- Indented leadered material on first page of Explanation 
+     section of the Frontmatter. [expla] -->
+
+<!ELEMENT JOURNAL  - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Name of journal cited.  Used in "Material Approved for 
+     Incorporation by Reference" section of Backmatter. 
+     [chapter] -->
+
+<!ELEMENT LDRFIG   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Right column of LDRWK material. [ldrwk] -->
+
+<!ELEMENT LDRLINE  - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Wide flush text paragraph, leadered to fill. [wide] -->
+
+<!ELEMENT LDRWK    - - (FL-2, LDRFIG?, Q, PRTPAGE)+>
+<!-- Used for extract size material where the data at the left 
+     and right ends of the line are separated by leaders. [annex, 
+     appendix, attach, cgcindex, enclo, example, exhibit, extract, 
+     figure, guide, ptcindex, sched, section, sfar, supple, table, 
+     text, tscindex] -->
+
+<!--ELEM  LI           defined in %gpodispl.ent; module          -->
+
+<!ELEMENT LOGO     - o (#PCDATA)>
+<!-- Used to represent the National Archives and Records 
+     Administration logo on the Title page, the word does not 
+     typeset. [titlepg] -->
+
+<!ELEMENT LRH      - o (#PCDATA | AC | E 
+                      | FR 
+                      | H | SU)*>
+<!-- Left running head. [bsubchin, casindex, cfrtitle, cgcindex, 
+     chapindx, chapter, chpindex, hhsarind, incorp, index, lsa, 
+     ombnos, ptcindex, redes, regindex, regtext, subchind, title, 
+     tscindex] -->
+
+<!ELEMENT LSA      - o ((LRH, RRH), 
+                        PRTPAGE?, 
+                        HED, 
+                        (Q?, P)+, 
+                        PUBYEAR+, 
+                        ALL?)>
+<!-- "List of Sections Affected" material in Backmatter. [bmtr] -->
+
+<!--ELEM  MATH         defined in %gpodispl.ent; module          -->
+
+<!ELEMENT MEMO     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Used for notes to CFR staff.  Follows "EFFDATES" in 
+     "REGTEXT", of ECFR only, and does not print.  Should never 
+     appear in the database from which the Federal register is 
+     printed. [regtext] -->
+
+<!ELEMENT MOREPGS  - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for long page number entries in the "List of CFR 
+     Sections Affected" section of the Backmatter.  Allows the 
+     entry to break from column to column. [pubyear] -->
+
+<!ELEMENT NAFTA    - o (EAR?, 
+                       (FNC  | FNP | FP 
+                      | FP1 | FP2 | FP3 | FP4 
+                      | GPH 
+                      | (PRE?, GPOTABLE) 
+                      | HD1 | HD2 
+                      | INT-XREF | P | PRTPAGE 
+                      | Q)+)>
+<!-- Special NAFTA appendix, used to force entries to span two 
+     columns. [appendix] -->
+
+<!ELEMENT NAME     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Used for person's Name. [annex, appendix, attach, enclo, 
+     exhibit, extract, figure, guide, sched, sfar, sig, supple, 
+     table] -->
+
+<!ELEMENT ABBREV     - o (#PCDATA)>
+
+<!ELEMENT NOLINE   - o (#PCDATA)>
+<!-- Creates invisible blank line to allow page breaks between 
+     multiple start only locators. [section] -->
+
+<!ELEMENT NOREG    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Used in the "List of CFR Sections Affected" of the Backmatter 
+     when there are no regulations for that year. [pubyear] -->
+
+<!ELEMENT NOTE     - - (PRTPAGE?, 
+                        HED, 
+                        (CITA 
+                       | FNC | FNP 
+                       | FP 
+                       | FP-1 | FTNT 
+                       | P | PRTPAGE | Q 
+                       | STARS)+)>
+<!-- Used for smalltype "Note:" entries. [annex, appendix, attach, 
+     ar, cgcindex, enclo, exhibit, extract, figure, guide, part, 
+     ptcindex, redes, regtext, sched, section, sfar, subchap, 
+     subpart, supple, table, text, toc, tscindex] -->
+
+<!ELEMENT NOTEPART - - (PRTPAGE, HED, Q?, 
+                        P, EAR?, PART, PRTPAGE)>
+<!-- Special repeated part at the beginning of Title 7, Volume 9. 
+     [chapter] -->
+
+<!ELEMENT OFFICE   - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for the "Office of the Federal Register" line in the 
+     signature block of the Explanation pages of the Frontmatter. 
+     [sig] -->
+
+<!ELEMENT OMBNOS   - o ((LRH, RRH)?, PRTPAGE?, 
+                        HED, 
+                        Q?, P, EDNOTE?, 
+                        (FNC | FNP 
+                       | PART | PRTPAGE | Q 
+                       | SUBPART | SECTION 
+                       | TEXT)+)>
+<!-- Office of Management and Budget material in Backmatter. 
+     [bmtr] -->
+
+<!ELEMENT ONOTE    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used in "Material Approved for Incorporation by Reference" 
+     section of Backmatter. [chapter] -->
+
+<!ELEMENT OWNER    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used in "Material Approved for Incorporation by Reference" 
+     section of Backmatter. [chapter] -->
+
+<!ELEMENT P        - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL | Q)*>
+<!-- Normal paragraph, first line indents. [abbr, acqrul, annex, 
+     appendix, attach, ar, auth, blmindex, casindex, cgcindex, 
+     chapter, chpindex, cite, combine, crossref, ednote, effdnot, 
+     effdnoti, effdnotp, eftnt, enclo, example, exhibit, expla, 
+     extract, faids, figure, forsale, ftnt, guide, incorp, index, 
+     lsa, nafta, note, notepart, ombnos, part, ptcindex, pub, 
+     redes, regindex, regtext, sched, section, sfar, sidehed, 
+     source, split, subchap, subpart, subjgrp, subtitle, supple, 
+     supplepub, table, teffdno, teffdnoi, teffdnop, text, thistitl, 
+     titlehd, tochd, tscindex, wednote, weffdno, weffdnoi, 
+     weffdnop, wide] -->
+
+<!ELEMENT P-1      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Paragraph, turnovers indent one level. [annex, appendix, attach, 
+     enclo, figure, guide, sched, sfar, supple, table] -->
+
+<!ELEMENT P-2      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Paragraph, turnovers indented two ems on left.  Same as 
+     FP1-2, which should not be used. [exhibit, extract, part, 
+     regtext, section, text] -->
+
+<!ELEMENT P-3      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Paragraph, turnovers indent third level. [annex, appendix, 
+     attach, enclo, exhibit, extract, figure, guide, sched, sfar, 
+     supple, table] -->
+
+<!ELEMENT P-DASH   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Used for paragraphs that fill with dashes. [annex, appendix, 
+     attach, enclo, exhibit, extract, figure, guide, sched, sfar, 
+     supple, table] -->
+
+<!ELEMENT P1       - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- First level indent paragraph. [annex, appendix, attach, 
+     enclo, exhibit, extract, figure, guide, ipar, regindex, 
+     sched, sfar, supple, table] -->
+
+<!ELEMENT P2       - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Second level indent paragraph. [annex, appendix, attach, 
+     enclo, exhibit, extract, faids, figure, guide, regindex, 
+     sched, sfar, supple, table] -->
+
+<!ELEMENT P2-3     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Second level indent paragraph, turnovers indent third level. 
+     [blmindex] -->
+
+<!ELEMENT P4-5     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Special indents for BLM index. [blmindex] -->
+
+<!ELEMENT P6-7     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Special indents for BLM index. [blmindex] -->
+
+<!ELEMENT P8-9     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Special indents for BLM index. [blmindex] -->
+
+<!ELEMENT PARAUTH  - o (#PCDATA | AC | E 
+                      | FR | FTNT | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+  <!ATTLIST PARAUTH    TYPE  (N | C | T 
+                               | W) "N" >
+<!-- Used for "(Authority:" entries within Appendixes, Exhibits, 
+     & Sections that refer to Paragraphs only.  (See also AUTH and 
+     SECAUTH).  Attributes denote [N]ormal, [C]lose (used where 
+     Authority comes under another entry that already has space 
+     below it), [T]urn, and [W]ide. [annex, appendix, attach, 
+     enclo, exhibit, figure, guide, regtext, sched, section, sfar, 
+     supple, table, text] -->
+
+<!ELEMENT PART     - o (BIBINF?, PRTPAGE?, SECAUTH,
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (PARTHD, NOTE*) 
+                       | (EAR?, 
+                          (HED 
+                         | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (AMDPAR | ANNEX 
+                         | APPENDIX | APPRO 
+                         | ATTACH | AUTH 
+                         | CITA 
+                         | CONTENTS 
+                         | CROSSREF 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | ENCLO 
+                         | EXHIBIT | EXTRACT 
+                         | FIGURE | FNC 
+                         | FNP | FP | FTNT 
+                         | ((TEAR | THED | TSECT)*, 
+                            PRE?, GPOTABLE) 
+                         | GUIDE 
+                         | HHSARIND | NOTE 
+                         | P | P-2 | PRTPAGE 
+                         | Q | ROPIND 
+                         | SCHED 
+                         | SFAR 
+                         | SECTION | SOURCE 
+                         | SUBJGRP | SUBJIND 
+                         | SUBPART | SUPPLE 
+                         | TABLE | TEFFDNO 
+                         | TEFFDNOI | TEFFDNOP | TEXT 
+                         | WEDNOTE)*, 
+                          PARTIND?)))>
+  <!ATTLIST PART         TITLE    CDATA  #IMPLIED
+                         CHAPTER  CDATA  #IMPLIED
+                         CHRCNT   CDATA  #IMPLIED>
+<!-- Group or container tag for search and retrieval purposes. 
+     Major division within Chapters and Subchapters.  The 
+     Attributes denote the Title and Chapter  numbers of the 
+     publication and the file size of the data in the Part to be 
+     retrieved, and are used for ECFR only. [chapter, notepart, 
+     ombnos, regtext, revtxt, subchap, subtitle, supersed] -->
+
+<!ELEMENT PARTHD   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Often used for the Part Title [annex, appendix, attach, 
+     chapter, contents, enclo, exhibit, figure, guide, part, 
+     sched, sfar, supple, table, toc] -->
+
+<!ELEMENT PARTIND  - o (PRTPAGE?, EAR?, HED, 
+                        GPOTABLE)>
+
+<!ELEMENT PARTS    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for the Part number information on the Title Page. 
+     [titlepg] -->
+
+<!ELEMENT PFTNT    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Footnote within the "List of CFR Sections Affected" section 
+     of the Backmatter that stays in place instead of going to 
+     the bottom of the column. [pubyear] -->
+
+<!ELEMENT PG       - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Usually used for page number data in lists. [chapti, expl, 
+     faids, pubyear, subti, subti2, toc] -->
+
+<!ELEMENT PGHD     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Usually used for the word "page" when it appears as a 
+     heading. [pubyear, toc] -->
+
+<!ELEMENT POSITION - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Job Title, used only in signature blocks. [sig] -->
+
+<!ELEMENT PRE      - o (#PCDATA)>
+<!-- Used in the ECFR only for screen formatted table data that 
+     is output for the HTML process.  This tag does not appear in 
+     the database for the printed CFR. [annex, appendix, attach, 
+     attach, casindex, cgcindex, enclo, example, exhibit, extract, 
+     figure, guide, nafta, part, ptcindex, redes, regtext, sched, 
+     section, sfar, subjind, supple, table, text, toc, tscindex, 
+     wide] -->
+
+<!ELEMENT PRTPAGE  - o EMPTY>
+  <!ATTLIST PRTPAGE    P  CDATA  #IMPLIED>
+
+<!ELEMENT PRTPAGE  - o EMPTY>
+  <!ATTLIST PRTPAGE    P  CDATA  #IMPLIED>
+<!-- This is a folio tag that is normally generated by the 
+     MicroComp Composition system.  It is not normally inserted 
+     by the data entry personnel, but can be. This tag can be used, 
+     with certain limitations, to maintain the System generated 
+     page break, or to change the way a page breaks. --> 
+<!-- [Found in all mixed content elements (those containing PCDATA). 
+     Also in: abbr, acqrul, alphlist, annex, appendix, attach, ar, 
+     attach, auth, blmindex,  bsubchin, btitle, casindex, cfrdoc, 
+     cfrtitle, cfrtoc,  cgcindex, chapindx, chapti, chpindex, cite, 
+     contents, crossref, ednote, effdnot, effdnoti, effdnotp, 
+     eftnt, enclo, example, examples, exhibit, expla, extract, 
+     faids, figure, ftnt, guide, gph, hhsarind, incorp, index, 
+     lsa, math, nafta, note, notepart, ombnos, part, ptcindex, 
+     publica, pubyear, redes, regindex, regtext, rescis, ropind, 
+     row, sched, scol2, section, sfar, sidehed, source, subchap, 
+     subchind, subjgrp, subjind, subpart, subtitle, supple, table, 
+     text, thistitl, titlehd, titleno, titlepg, toc, tochd, toctac, 
+     tscindex, tsect, volhd, wednote, wide, wsect] -->
+
+<!ELEMENT PT       - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for part data in indexes and TOC entries. [bsubchin, 
+     chapindx, chapti, subchind] -->
+
+<!ELEMENT PTHD     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Usually used for the word "part" when it appears as a 
+     heading. [bsubchin, cfrtoc, chapindx, chapter, hssarind, 
+     redes, subchind, toc] -->
+
+<!ELEMENT PUB      - o (Q?, P+)>
+<!-- Used for "Published by" data on Title Page. [titlepg] -->
+
+<!ELEMENT PUBLI    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for publications. [ar, chapter, publica] -->
+
+<!ELEMENT PUBLI1   - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Indented "publi". [chapter] -->
+
+<!ELEMENT PUBLICA  - o (PRTPAGE?, HED, 
+                        (Q?, PUBLI)+)>
+<!-- Group or container tag for search and retrieval purposes. 
+     Used in TOC material. [toc] -->
+
+<!ELEMENT PUBYEAR  - o (PRTPAGE?, YEAR, Q?, 
+                        (NOREG 
+                       | (REG?, CFRNO, VOLHD, 
+                          PGHD, 
+                          (Q?, 
+                           (CHAPNO | ENTRY 
+                          | REV | SECTNO), 
+                           (PG, 
+                            (MOREPGS 
+                           | PFTNT)*)?)+)+)+)>
+<!-- Group or container tag for search and retrieval purposes. 
+     Used in "List of CFR Sections Affected" section of 
+     Backmatter. [lsa] -->
+
+<!ELEMENT Q        - o EMPTY>
+  <!ATTLIST Q          P  CDATA  #IMPLIED>
+<!-- Insert vertical space.  The Attribute is two digits, precede 
+     with hyphen (-) for negative space.  Used to add or delete 
+     space between lines. [abbr, acqrul, alphlist, annex, 
+     appendix, attach, ar, attach, auth, blmindex, bsubchin, 
+     casindex, cfrdoc, cfrtoc, cgcindex, chapindx, chapti, 
+     chpindex, contents, crossref, ednote, eftnt, example, 
+     examples, exhibit, expla, extract, faids, figure, ftnt, 
+     guide, lsa, nafta, note, notepart, ombnos, part, ptcindex, 
+     pub, publica, pubyear, redes, regindex, regtext, ropind, row, 
+     section, sehed, sfar, sidehed, source, subchind, supple, 
+     table, text, thistitl, toc, toctac, wednote, wide] -->
+
+<!ELEMENT REDES    - o (((LRH, RRH)?, 
+                         PRTPAGE?, 
+                         HED, 
+                         ((EDNOTE | FNC | FNP 
+                         | P | PRTPAGE 
+                         | Q)+, 
+                          ((PTHD, 
+                            (FNC | FNP 
+                           | PRTPAGE | Q)*, 
+                             HED, 
+                            (FNC | FNP 
+                           | PRTPAGE | Q)*, 
+                             NOTE, 
+                            (FNC | FNP 
+                           | PRTPAGE | Q)*)?, 
+                           (PRE?, GPOTABLE)+)+)+) 
+                      | (HD1, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*, 
+                         P, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*, 
+                         (PRE?, GPOTABLE)?, 
+                         (HED, 
+                          (FNC | FNP 
+                         | PRTPAGE | Q)*, 
+                           P, 
+                          (FNC | FNP 
+                         | PRTPAGE | Q)*, 
+                          (PRE?, GPOTABLE)*)+))>
+  <!ATTLIST REDES      TYPE (H 
+                              | N 
+                              | O 
+                              | R) "O" >
+<!-- Starts Redesignation Table section of Backmatter.  
+     Attributes are [H]igh (no extra sink), [N]ext page, new 
+     [O]dd page, [R]unin  [bmtr] -->
+
+<!ELEMENT REG      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Contains data concerning the Regulations changed in that 
+     year.  Used in "List of CFR Sections Affected" section of 
+     Backmatter. [pubyear] -->
+
+<!ELEMENT REGINDEX - o ((LRH, RRH), 
+                        PRTPAGE?, 
+                        HED, 
+                        Q?, EDNOTE, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        ((LRH, RRH)?, 
+                         INDEXHD, FTNT?, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*, 
+                         (ALPHHD, 
+                          (FNC | FNP 
+                         | FP | HD1 
+                         | P | P1 
+                         | P2 | PRTPAGE 
+                         | Q)+)+)+)>
+<!-- Special index in Backmatter. [bmtr] -->
+
+<!ELEMENT REGION   - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used only for EPA Region in "Material Approved for 
+     Incorporation by Reference" section of Backmatter. 
+     [chapter] -->
+
+<!ELEMENT REGTEXT  - - (BIBINF?, (LRH, RRH)?, 
+                        EFFDATES?, MEMO?, 
+                        (AMDPAR 
+                       | ANNEX | APP 
+                       | APPENDIX 
+                       | ATTACH 
+                       | APPRO | AUTH 
+                       | CHAPTER 
+                       | CONTENTS 
+                       | EDNOTE | EFFDNOT 
+                       | ENCLO 
+                       | EXAMPLE | EXHIBIT | EXTRACT 
+                       | FIGURE 
+                       | FNC | FNP 
+                       | FP | FP-1 
+                       | FP-2 | FP1-2 | FTNT 
+                       | GPH 
+                       | (PRE?, GPOTABLE) 
+                       | GUIDE 
+                       | HD1 | HD2 
+                       | HD3 | HED 
+                       | MATH 
+                       | NOTE 
+                       | P | P-2 
+                       | PARAUTH | PART 
+                       | PRTPAGE | Q
+                       | SCHED 
+                       | SFAR 
+                       | SECAUTH | SECTION 
+                       | SIG | SOURCE 
+                       | STARS 
+                       | SUBCHAP | SUBJGRP | SUBPART 
+                       | SUPPLE 
+                       | TABLE 
+                       | WIDE)+)+>
+  <!ATTLIST REGTEXT    TITLE    CDATA  #IMPLIED
+                       CHAPTER  CDATA  #IMPLIED
+                       PART     CDATA  #IMPLIED
+                       EFFDATE  CDATA  #IMPLIED
+                       FRPAGE   CDATA  #IMPLIED
+                       ID       CDATA  #IMPLIED>
+<!-- Used to designate Regulatory Text material from the Rules 
+     section that will be inserted into the CFRs.  The Attributes 
+     denote the Title, the Chapter or Part numbers, the Effective 
+     Date of the material, the Page Number of the Federal Register 
+     publication, and the initials of the CFR editor, and are used 
+     for ECFR only. [cfrdoc] -->
+
+<!ELEMENT RESCIS   - o (PRTPAGE?, HED, AR+)>
+<!-- Used only for the Rescission Notice section of the Index to 
+     Chapter 3, Title 20. [index] -->
+
+<!ELEMENT RESERVED - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used mostly for units that are reserved for future use, and 
+     therefore contain no data at this time. [annex, appendix, 
+     attach, attach, chapter, chapti, contents, enclo, exhibit, 
+     extract, figure, guide, part, sched, section, sfar, subchap, 
+     subjgrp, subpart, subtitle, supple, table, titleno, titlepg, 
+     wide] -->
+
+<!ELEMENT REV      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- "Revised as of" line under Head.  Change to REVISED? 
+     [alphlist, incorp, pubyear, toctac] -->
+
+<!ELEMENT REVISED  - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- "Revised as of" line on title Page.  Use REV instead? 
+     [titlepg] -->
+
+<!ELEMENT REVTXT   - - (ANNEX 
+                      | APPENDIX  
+                      | ATTACH 
+                      | AUTH 
+                      | ENCLO 
+                      | FIGURE 
+                      | GUIDE 
+                      | PART 
+                      | SCHED 
+                      | SECTION 
+                      | SFAR 
+                      | SUBJGRP | SUBPART 
+                      | SUPPLE 
+                      | TABLE)+>
+<!-- Text that is revised. [ednote, effdnot, effdnoti, effdnotp] -->
+
+<!ELEMENT ROPIND   - o (PRTPAGE?, 
+                        HED, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q 
+                       | (SUBJECT 
+                        | (SUBJL, SECTNO)) 
+                       | (SUBJECT1 
+                        | (SUBJ1L, SECTNO)) 
+                       | (SUBJECT2 
+                        | (SUBJ2L, SECTNO)) 
+                       | (SUBJECT3 
+                        | (SUBJ3L, SECTNO)) 
+                       | (SUBJ4L, SECTNO)*)+)>
+<!-- Special index within parts. [part] -->
+
+<!ELEMENT RRH      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Right running head. [bsubchin, casindex, cfrtitle, cgcindex, 
+     chapindx, chapter, chpindex, hhsarind, incorp, index, lsa, 
+     ombnos, ptcindex, redes, regindex, regtext, subchind, title, 
+     tscindex] -->
+
+<!ELEMENT RULE     - o EMPTY>
+<!-- Generates full length hairline rule. [annex, appendix, 
+     attach, enclo, exhibit, extract, figure, guide, sched, 
+     section, sfar, supple, table, text, wide] -->
+
+<!ELEMENT SCH      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for schedule head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT SCHED    - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED | THED 
+                         | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE                          
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST SCHED        TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Schedule (like Appendix). [part, regtext, revtxt, subchap, 
+     subpart, supersed] -->
+
+<!ELEMENT SCOL2    - o (LI | PRTPAGE)+>
+<!-- Double column material within a column, automatically flows 
+     from column to column. [annex, appendix, attach, enclo, 
+     exhibit, extract, figure, guide, sched, sfar, supple, table] -->
+
+<!ELEMENT SECAUTH  - o (#PCDATA | AC | E 
+                      | FR | FRLINK 
+                      | FTNT | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+  <!ATTLIST SECAUTH    TYPE  (N | C | T 
+                               | W) "N" >
+<!-- Used for "(Authority:" entries within Appendixes, Exhibits, 
+     & Sections that refer to Sections only.  (See also AUTH and 
+     PARAUTH).  Attributes denote [N]ormal, [C]lose (used where 
+     Authority comes under another entry that already has space 
+     below it), [T]urn, and [W]ide. [annex, appendix, attach, 
+     enclo, exhibit, figure, guide, regtext, sched, section, sfar, 
+     supple, table, text] -->
+
+<!ELEMENT SECHD    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Usually used for the words "Section" or "Sec." when it 
+     appears as a heading. [annex, appendix, attach, contents, 
+     effdnot, effdnoti, effdnotp, enclo, exhibit, figure, guide, 
+     sched, sfar, subchind, subjgrp, subpart, supple, table] -->
+
+<!ELEMENT SECTION  - o (BIBINF?, PRTPAGE?, 
+                        SECTNO, 
+                        ((SUBJECT, 
+                          (EXT-XREF | INT-XREF)*, 
+                          NOLINE?, 
+                          (AUTH | APPRO 
+                         | BOXTXT 
+                         | CITA 
+                         | CONTENTS 
+                         | CROSSREF 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EXHIBIT 
+                         | EXTRACT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP1-2 
+                         | FP2 | FP2-2 
+                         | FTNT | CTRHD
+                         | GPH 
+                         | ((TEAR | THED | TSECT)*, 
+                            PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 
+                         | HD4 | HD5 | HD6 | LHD1
+                         | HED1 | LDRWK 
+                         | MATH | NOTE 
+                         | P | P-2 
+                         | PARAUTH | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH | SFP-2 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WBOXTXT 
+                         | WEDNOTE 
+                         | WEFFDNO 
+                         | WEFFDNOI 
+                         | WEFFDNOP 
+                         | WIDE)*)* 
+                       | RESERVED)+)>
+  <!ATTLIST SECTION      TITLE    CDATA  #IMPLIED
+                         CHAPTER  CDATA  #IMPLIED
+                         CHRCNT   CDATA  #IMPLIED
+                         PART     CDATA  #IMPLIED>
+<!-- Group or container tag for search and retrieval purposes.  
+     Major division within Part.  The Attributes denote the Title, 
+     Chapter and Part numbers of the publication and the file size 
+     of the data in the Section to be retrieved, and are used for 
+     ECFR only. [ombnos, part, regtext, revtxt, subjgrp, subpart, 
+     supersed, wide] -->
+
+<!ELEMENT SECTNO   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for the CFR section number.  Except for indexes and in 
+     Backmatter it is almost always followed by either  "SUBJECT" 
+     or "RESERVED". [annex, appendix, attach, contents, enclo, 
+     extract, figure, guide, hhsarind, pubyear, ropind, sched, 
+     section, sfar, subjgrp, subpart, supple, table, tsect, wsect] -->
+
+<!ELEMENT SF       - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Sfar head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT SFAR     - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED 
+                         | THED | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST SFAR         TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Sfar (like Appendix). [part, regtext, revtxt, subchap, 
+     subpart, supersed] -->
+
+<!ELEMENT SFP      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Wide small size flush paragraph. [wide] -->
+
+<!ELEMENT SFP-2    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Small flush paragraph with turnovers indented two levels, 
+     see also FP-2. DO YOU WANT TO REMOVE THIS?? [extract, 
+     section, text] -->
+
+<!ELEMENT SIDEHED  - o (PRTPAGE?, HED, 
+                        (P, 
+                         (FNC | FNP 
+                        | PRTPAGE | Q)*)+)>
+<!-- Used within explanatory data following the "Cite this Code" 
+     page in the Frontmatter.  Probably can be restructured so 
+     that this tag is unnecessary. [expla] -->
+
+<!ELEMENT SIG      - o (NAME, POSITION, OFFICE)>
+<!-- Designates signature block. [expla, regtext] -->
+
+<!ELEMENT SOURCE   - o (PRTPAGE?, 
+                        HED, P, Q)>
+<!-- Used for "Source:" entries.  Comes before the first Section 
+     in the following units. [annex, appendix, attach, enclo, 
+     figure, guide, part, regtext, sched, sfar, subjgrp, subpart, 
+     supple, table, text] -->
+
+<!ELEMENT SP       - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Small paragraph in wide type only. [wide] -->
+
+<!ELEMENT SPECED   - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | SU)*>
+<!-- Last two lines of the Title Page. [titlepg] -->
+
+<!ELEMENT SPLIT    - o (P+, PRTPAGE)>
+<!-- Used when one volume is split into two volumes.  Part of the 
+     publishing information behind the Title Page. [btitle] -->
+
+<!ELEMENT SSAINDEX - o ((LRH, RRH)?, PRTPAGE?, 
+                        HED, 
+                        HED, EDNOTE, 
+                        P+, 
+                        ACQRUL, RESCIS)>
+<!-- Special Index in Backmatter. [bmtr] -->
+
+<!ELEMENT STARS    - o (#PCDATA)>
+<!-- Inserts line of five stars to signify break in data. [annex, 
+     appendix, attach, enclo, effdnot, effdnoti, effdnotp, 
+     exhibit, extract, figure, guide, note, regtext, sched, 
+     section, sfar, subpart, supple, table, text] -->
+
+<!ELEMENT STATE    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used in "Material Incorporated by Reference" section of 
+     Backmatter. [chapter] -->
+
+<!ELEMENT STUB     - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Back part of leadered material. [blmindex, ipar] -->
+
+<!ELEMENT SU       - - (#PCDATA)>
+<!-- Superior function.  Microcomp processing routine to create 
+     superior figures automatically. [Found in all mixed content 
+     elements (those that contain PCDATA)] -->
+
+<!ELEMENT SUBAGCY  - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE 
+                      | SU)*>
+<!-- Subagency name. [alphlist] -->
+
+<!ELEMENT SUBCHAP  - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | ((HED, 
+                          (EXT-XREF | INT-XREF)*)*, 
+                          (AMDPAR 
+                         | ANNEX 
+                         | APPENDIX  
+                         | ATTACH | CROSSREF 
+                         | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | ENCLO 
+                         | EXHIBIT 
+                         | FIGURE 
+                         | GUIDE | P 
+                         | SCHED 
+                         | SFAR 
+                         | SUPPLE 
+                         | TABLE | TEXT 
+                         | WEDNOTE 
+                         | WIDE 
+                         | NOTE | PART | SUBJGRP)*, 
+                          SUBCHIND*)))>
+  <!ATTLIST SUBCHAP      TYPE  (N 
+                                 | P 
+                                 | R) "R"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Group or container tag for search and retrieval purposes. 
+     Major division within a Chapter.  The Attributes are [N]ew 
+     odd page, new [P]age, and [R]unin, and the file size of the 
+     data in the Subchapter to be retrieved, and are used for ECFR 
+     only. [chapter, regtext, toc] -->
+
+<!ELEMENT SUBCHIND - o ((LRH, RRH)?, 
+                        PRTPAGE?, 
+                        HED, 
+                        SUBCHPHD?,
+                        EDNOTE?, 
+                        FP-1?, 
+                        (PTHD | SECHD), 
+                        ((FNC | FNP 
+                        | PRTPAGE | Q)*, 
+                         ALPHHD?, 
+                         (((SUBJECT, FTNT?) 
+                         | (SUBJL, FTNT?, 
+                            PT, FTNT?)) 
+                        | ((SUBJECT1, FTNT?) 
+                         | (SUBJ1L, FTNT?, 
+                            PT, FTNT?)) 
+                        | ((SUBJECT2, FTNT?) 
+                         | (SUBJ2L, FTNT?, 
+                            PT, FTNT?)) 
+                        | ((SUBJECT3, FTNT?) 
+                         | (SUBJ3L, FTNT?, 
+                            PT, FTNT?)) 
+                        | (SUBJ4L, FTNT?, PT, 
+                           FTNT?)*)*)+)>
+<!-- Special index within subchapters. [subchap] -->
+
+<!ELEMENT SUBCHPHD - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE 
+                      | SU)*>
+<!-- Subchapter head in Tables of Contents. [chapti, hhsarind, 
+     subchind, toc] -->
+
+<!ELEMENT SUBJECT  - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE 
+                      | SU)*>
+<!-- Subject of Section, usually follows Section Number. [annex, 
+     appendix, attach, bsubchin, chapindx, chapti, chpindex, 
+     contents, enclo, expl, extract, faids, figure, guide, hhsarind, 
+     ropind, sched, section, sfar, subchind, subjgrp, subpart, 
+     supple, table, titleno, titlepg, tsect, wsect] -->
+
+<!ELEMENT SUBJECT1 - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU)*>
+<!-- First level indented subject in special indexes. [bsubchin, 
+     chapindx, faids, hhsarind, ropindx, subchind] -->
+
+<!ELEMENT SUBJECT2 - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU)*>
+<!-- Second level indented subject in special indexes. [bsubchin, 
+     chapind, hhsarind, ropind, subchind] -->
+
+<!ELEMENT SUBJECT3 - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU)*>
+<!-- Third level indented subject in special indexes. [bsubchin, 
+     chapind, hhsarind, ropind, subchind] -->
+
+<!ELEMENT SUBJL    - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Leadered subject in special indexes. [bsubchin, chapind, 
+     hhsarind, ropind, subchind] -->
+
+<!ELEMENT SUBJ1L   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- First level leadered subject in special indexes. [bsubchin, 
+     chapind, hhsarind, ropind, subchind] -->
+
+<!ELEMENT SUBJ2L   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Second level leadered subject in special indexes. [bsubchin, 
+     chapind, hhsarind, ropind, subchind] -->
+
+<!ELEMENT SUBJ3L   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Third level leadered subject in special indexes. [bsubchin, 
+     chapind, hhsarind, ropind, subchind] -->
+
+<!ELEMENT SUBJ4L   - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Fourth level leadered subject in special indexes. [bsubchin, 
+     hhsarind, ropind, subchind] -->
+
+<!ELEMENT SUBJGRP  - o (BIBINF?, PRTPAGE?, 
+                        (RESERVED 
+                      | ((HED?, 
+                          FTNT?), 
+                         P*, 
+                         (HD1*, 
+                          HD2*, 
+                          HD3*, 
+                          (AMDPAR | AUTH | LHD1
+                         | EDNOTE 
+                         | SOURCE | SECTION 
+                         | TEXT 
+                         | (SECHD?, SECTNO, 
+                            SUBJECT, 
+                            (FP1-2 | FP2 
+                           | FP2-2 | P-2)*) 
+                         | APP)*)*)*)+)+>
+<!-- Denotes text grouping (those that contain several sections). 
+     [chapter, contents, part, regtext, subchap, subpart] -->
+
+<!ELEMENT SUBJIND  - o ((LRH, RRH)?, 
+                        PRTPAGE?, 
+                        HED, 
+                        EAR?, 
+                        WEDNOTE, 
+                        (PRE?, GPOTABLE))>
+<!-- Used for Subject Index in a part. [part] -->
+
+<!ELEMENT SUBPART  - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                      | (HED, FTNT?, 
+                         ((AMDPAR | AUTH 
+                         | CITA | CROSSREF | EDNOTE  
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | (EXT-XREF | INT-XREF)* 
+                         | FNC | FNP | EX
+                         | HD1 
+                         | HD2 
+                         | HD3 
+                         | NOTE | P | LHD1
+                         | SECTION | SOURCE 
+                         | STARS 
+                         | SUBJGRP | TEXT)+ 
+                        | (SECHD?, 
+                           (SECTNO, 
+                            (SUBJECT | RESERVED))+, 
+                           (APP 
+                          | FP-2)*)+)+, 
+                           (ANNEX 
+                          | APPENDIX  
+                          | ATTACH 
+                          | ENCLO 
+                          | EXHIBIT 
+                          | FIGURE 
+                          | GUIDE 
+                          | SCHED 
+                          | SFAR 
+                          | SUPPLE 
+                          | TABLE)*)+))>
+  <!ATTLIST SUBPART    CHRCNT  CDATA  #IMPLIED>
+<!-- Group or container tag for search and retrieval purposes.  
+     Major division within Part.  The Attribute is the file size 
+     of the data in the Subpart to be retrieved, and is used for 
+     ECFR only. [contents, ombnos, part, regtext, revtxt, 
+     supersed] -->
+
+<!ELEMENT SUBPUBLI - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for publications. [chapter] -->
+
+<!ELEMENT SUBTI    - o (HED, PG?)>
+<!-- Subtitle head in Tables of Contents. [cfrtoc, titleno] -->
+
+<!ELEMENT SUBTI2   - o (HED, PG)+>
+<!-- Special use Subtitle head in Tables of Contents. [cfrtoc, 
+     titleno] -->
+
+<!ELEMENT SUBTITL  - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Subtitle head on Title Page Table of Contents. [titleno] -->
+
+<!ELEMENT SUBTITLE - o (BIBINF?, PRTPAGE?, 
+                        ((HED, P?, CHAPNO?, 
+                         TOC?, 
+                         (CHAPTER | GPH 
+                        | PART)*)
+                       | RESERVED))>
+  <!ATTLIST SUBTITLE    CHRCNT  CDATA  #IMPLIED>
+<!-- Group or container tag for search and retrieval purposes.  
+     Major division within Title.  The Attribute is the file size 
+     of the data in the Subtitle to be retrieved, and is used for 
+     ECFR only. [title] -->
+
+<!ELEMENT SUPERSED - - (ANNEX 
+                      | APPENDIX  
+                      | ATTACH 
+                      | ENCLO 
+                      | FIGURE 
+                      | GUIDE 
+                      | PART 
+                      | SCHED 
+                      | SECTION
+                      | SFAR 
+                      | SUBJGRP | SUBPART 
+                      | SUPPLE 
+                      | TABLE)+>
+<!-- Superseded material. [ednote, effdnot, effdnoti, effdnotp] -->
+
+<!ELEMENT SUP      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Supplement head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT SUPPLE   - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED 
+                         | THED | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 | LHD1
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST SUPPLE       TYPE  (CHAPTER | PART | REGTEXT 
+                                 | TEXT | SUBCHAP | SUBPART 
+                                 | SUPERSED) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Supplement (like Appendix). [part, regtext, revtxt, subchap, 
+     subpart, supersed] -->
+
+<!ELEMENT SUPPLPUB - o (PRTPAGE?, 
+                        HED, 
+                        P+)>
+<!-- Supplementary Publications in Tables of Contents. [toc] -->
+
+<!ELEMENT TBL      - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for Table head entries in tables of contents. [cfrtoc, 
+     contents, regtext, subjgrp, subpart, toc] -->
+
+<!ELEMENT TABLE    - o (BIBINF?, PRTPAGE?, 
+                        ((RESERVED, 
+                          (EXT-XREF | INT-XREF)*) 
+                       | (EAR?, 
+                          (HED 
+                         | THED | WHED), 
+                          (EXT-XREF | INT-XREF)*, 
+                          (APPRO | AUTH | CITA 
+                         | CONTENTS 
+                         | DOCKETHD 
+                         | EAR | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | EFTNT | EXAMPLE 
+                         | FNC | FNP 
+                         | FP 
+                         | FP-1 | FP-2 | FP-DASH 
+                         | FP1-2 | FP2 
+                         | FP2-2 | FP2-3 
+                         | FRP | FRP0 | FTNT 
+                         | GPH 
+                         | (TEAR?, PRE?, GPOTABLE) 
+                         | HD1 | HD2 | HD3 | LHD1
+                         | HED | LDRWK 
+                         | MATH 
+                         | NAME | NOTE 
+                         | P | P1 | P-1 
+                         | P2 | P-3 | P-DASH 
+                         | PARAUTH | PARTHD 
+                         | PRTPAGE | Q 
+                         | RULE 
+                         | SECAUTH 
+                         | (SECTNO, 
+                            (SUBJECT 
+                           | RESERVED)) 
+                         | SCOL2 | SECHD 
+                         | SOURCE 
+                         | STARS 
+                         | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                         | WIDE)+)))>
+  <!ATTLIST TABLE        TYPE  (CHAPTER | PART | REGTEXT 
+                                 | SUBCHAP | SUPERSED 
+                                 | SUBPART | TEXT) "PART"
+                         CHRCNT CDATA  #IMPLIED>
+<!-- Table (like Appendix). [part, regtext, revtxt, subchap, subpart, 
+     supersed] -->
+
+<!ELEMENT TEAR     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used on pages that appear sideways to override default entry 
+     for first or last section number in running head.  This will 
+     be removed from the .DTD when we implement the new "Go 
+     Normal," "Go Turn," & "Go Wide" Processing Instructions. 
+     [annex, appendix, attach, attach, enclo, example, exhibit, 
+     extract, figure, guide, part, sched, section, sfar, supple, 
+     table, text] -->
+
+<!ELEMENT TEFFDNO  - - (HED, P,
+                         (FP | P)*)>
+<!-- Sideways Effective Date Note.  This will be removed from the 
+     .DTD when we implement the new "Go Normal," "Go Turn," & "Go 
+     Wide" Processing Instructions. [annex, appendix, attach, 
+     enclo, exhibit, figure, guide, part, sched, section, sfar, 
+     supple, table, text] -->
+
+<!ELEMENT TEFFDNOI - - (HED, P,
+                         (FP | P)*)>
+<!-- Sideways Effective Date Note.  Appears only in the ECFR, not 
+     in the printed version.  This will be removed from the .DTD 
+     when we implement the new "Go Normal," "Go Turn," & "Go Wide" 
+     Processing Instructions. [annex, appendix, attach, enclo, 
+     exhibit, figure, guide, part, sched, section, sfar, supple, 
+     table, text] -->
+
+<!ELEMENT TEFFDNOP - - (HED, P,
+                         (FP | P)*)>
+<!-- Sideways Effective Date Note.  Appears only in the printed 
+     version, not in the ECFR.  This will be removed from the .DTD 
+     when we implement the new "Go Normal," "Go Turn," & "Go Wide" 
+     Processing Instructions. [annex, appendix, attach, enclo, 
+     exhibit, figure, guide, part, sched, section, sfar, supple, 
+     table, text] -->
+
+<!ELEMENT TEXT     - o (APPRO 
+                      | BOXTXT 
+                      | CITA | CROSSREF 
+                      | EAR | EDNOTE 
+                      | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                      | EXHIBIT | EXTRACT 
+                      | EXAMPLE | EXT-XREF 
+                      | FNC | FNP 
+                      | FP 
+                      | FP-1 | FP-2 | FP1-2 
+                      | FP2 | FP2-2 
+                      | FTNT 
+                      | GPH 
+                      | ((TEAR | THED | TSECT)*, 
+                         PRE?, GPOTABLE) 
+                      | HD1 | HD2 | HD3 | LHD1
+                      | HD4 | HD5 
+                      | HD6 | HED1 
+                      | INT-XREF | LDRWK 
+                      | MATH | NOTE 
+                      | P | P-2 
+                      | PARAUTH | PRTPAGE | Q 
+                      | RULE 
+                      | SECAUTH | SFP-2 
+                      | STARS 
+                      | SOURCE 
+                      | TEFFDNO | TEFFDNOI | TEFFDNOP 
+                      | WBOXTXT 
+                      | WEDNOTE 
+                      | WEFFDNO | WEFFDNOI 
+                      | WEFFDNOP 
+                      | WIDE)+>
+<!-- Used as a catchall category when no other way to continue, 
+     contains almost everything in Section.  Try to eliminate 
+     whenever possible. [ombnos, part, subchap, subjgrp, 
+     subpart] -->
+
+<!ELEMENT THED     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Head that turns sideways on the page.  This will be removed 
+     from the .DTD when we implement the new "Go Normal," "Go 
+     Turn," & "Go Wide" Processing Instructions. [annex, appendix, 
+     attach, attach, enclo, example, exhibit, extract, figure, 
+     guide, part, sched, section, sfar, supple, table, text] -->
+
+<!ELEMENT THISTITL - o (PRTPAGE?, HED, 
+                        (P, 
+                         (FNC | FNP 
+                        | INT-XREF | PRTPAGE 
+                        | Q)*)+, 
+                        GPH)>
+<!-- Next to last page of Frontmatter, precedes the Order form. 
+     [fmtr] -->
+
+<!ELEMENT TITLE    - o (BIBINF?, (LRH, RRH)?, 
+                        (CFRTITLE 
+                       | SUBTITLE 
+                       | CHAPTER))+>
+  <!ATTLIST TITLE    CHRCNT  CDATA  #IMPLIED>
+<!-- Group or container tag for search and retrieval purposes. 
+     Major group of the publication.  The Attribute is the file 
+     size of the data in the Title to be retrieved, and is used 
+     for ECFR only. [cfrdoc] -->
+
+<!ELEMENT TITLEHD  - - (PRTPAGE?, HED+, P?)>
+<!-- Head for the true Title page. [cfrtitle] -->
+
+<!ELEMENT TITLENO  - o (PRTPAGE?, 
+                        ((HED, 
+                         ((SUBTI*, CHAPTI) 
+                        | (SUBTITL*, CHAPNO?, 
+                           SUBJECT) 
+                        | SUBTI2)+)+ 
+                       | RESERVED))>
+<!-- Title Number in Tables of Contents in Frontmatter and 
+     Backmatter. [toc in fmtr, toctac] -->
+
+<!ELEMENT TITLENUM - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Used for the Title number, above the rule over the Part 
+     number information, on the Title Page. [titlepg] -->
+
+<!ELEMENT TITLEPG  - o (CODE?, 
+                        (PRTPAGE?, TITLENUM, 
+                         PARTS*, HED?, 
+                         REVISED, SUBJECT), 
+                        (TITLENUM, RESERVED)?, 
+                        CONTAINS?, DATE?, 
+                        ANCIL?, PUB, SPECED, 
+                        LOGO?)>
+<!-- First page of Frontmatter. [fmtr] -->
+
+<!ELEMENT TOC      - -  ((PRTPAGE?, HED, SUBJECT,SUBJECT1,
+                          PGHD, 
+                          EXPL, TITLENO+, FAIDS+) 
+                       | (TOCHD?,
+                          (EDNOTE 
+                         | (PRE?, GPOTABLE) 
+                         | NOTE 
+                         | SUBCHPHD)*, 
+                          (PARTHD | SUBCHAP)*, 
+                          HD2?, Q?, 
+                          PTHD, PGHD, 
+                          (((ANN | APP 
+                           | ATT 
+                           | ENC | EX 
+                           | FIG | GUI 
+                           | SCH | SF 
+                           | SUP 
+                           | TBL), PG) 
+                         | APPHED | CHAPTI 
+                         | HD2 | GROUPHD 
+                         | NOTE 
+                         | PARTHD 
+                         | PUBLICA 
+                         | SUBCHAP)+,
+                          (CROSSREF | EDNOTE 
+                         | EFFDNOT | EFFDNOTI | EFFDNOTP 
+                         | SUPPLPUB 
+                         | ABBR)*))?>
+<!-- Main Table of Contents in major divisions of publication. 
+     [chapter, fmtr, subtitle] -->
+
+<!ELEMENT TOCHD    - - (PRTPAGE?, (HED+, FTNT?, LRH, RRH, Q)+, 
+                        P?)>
+<!-- Main head in Table of Contents. [toc] -->
+
+<!ELEMENT TOCTAC   - o (PRTPAGE?, CHHD, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        HED+, 
+                        (FNC | FNP 
+                       | PRTPAGE | Q)*, 
+                        REV, 
+                        ((FNC | FNP 
+                        | PRTPAGE | Q)*, 
+                         TITLENO)+)>
+<!-- Table of CFR Titles and Chapters. [bkmtr] -->
+
+<!ELEMENT TSCINDEX - o ((LRH, RRH)?, 
+                        PRTPAGE?, 
+                        HED, 
+                        (EXAMPLE | EXTRACT 
+                       | FP | FTNT 
+                       | GPH 
+                       | (PRE?, GPOTABLE) 
+                       | HD1 | HD2 | HD3 | LHD1
+                       | LDRWK | MATH 
+                       | NOTE | P | WEDNOTE)+)>
+<!-- Special index within Backmatter. [bmtr] -->
+
+<!ELEMENT TSECT    - o (BIBINF?, PRTPAGE?, 
+                        SECTNO, SUBJECT, EXT-XREF?)>
+  <!ATTLIST TSECT    CHRCNT  CDATA  #IMPLIED>
+<!-- Section head for sideways pages.  The Attribute denotes the 
+     file size of the data in the Section to be retrieved, and is 
+     used for ECFR only.  This will be removed from the .DTD when 
+     we implement the new "Go Normal," "Go Turn," & "Go Wide" 
+     Processing Instructions. [example, extract, part, section, 
+     text] -->
+
+<!ELEMENT TXT      - o (#PCDATA | AC | E 
+                      | FR | FRLINK | FTREF 
+                      | H | PRTPAGE 
+                      | SU | URL)*>
+<!-- Special use for text that runs in behind the head. [ednote] -->
+
+<!ELEMENT URL      - - CDATA>
+<!-- Uniform Resource Locator.  Link to another web site. Used in 
+     the following Elements.  May be add to other Elements in the 
+     future. [appro, cita, fl-2, fp, fp-1, fp-2, fp-dash, fp1, 
+     fp1-2, fp2, fp2-2, fp2-3, fp3, fp4, frp, frp0, halfdash, 
+     ldrline, p, p-1, p-2, p-3, p-dash, p1, p1-3, p2, p2-3, 
+     p2-4, parauth, secauth, sfp, sfp-2, sp, stub, txt] -->
+
+<!ELEMENT VOLHD    - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Repeatable Volume number head in "List of CFR Sections 
+     Affected" section of Backmatter. [pubyear] -->
+
+<!ELEMENT WBOXTXT  - - (HD1?, P+, LHD1)>
+<!-- Boxed text that spans two columns.  This will be removed from 
+     the .DTD when we implement the new "Go Normal," "Go Turn," & 
+     "Go Wide" Processing Instructions. [section, text] -->
+
+<!ELEMENT WEDNOTE  - - (PRTPAGE?, HED, Q?, 
+                        P, P*)>
+<!-- Editorial Note that spans two columns.  This will be removed 
+     from the .DTD when we implement the new "Go Normal," "Go 
+     Turn," & "Go Wide" Processing Instructions. [casindex, 
+     exhibit, part, section, subchap, subjind, text, tscindex] -->
+
+<!ELEMENT WEFFDNO  - - (HED, P, P*)>
+<!-- Effective Date Note that spans two columns.  This will be 
+     removed from the .DTD when we implement the new "Go Normal," 
+     "Go Turn," & "Go Wide" Processing Instructions. [section, 
+     text] -->
+
+<!ELEMENT WEFFDNOI - - (HED, P, P*)>
+<!-- Effective Date Note that spans two columns.  Appears only in 
+     the ECFR, not in the printed version.  This will be removed 
+     from the .DTD when we implement the new "Go Normal," "Go 
+     Turn," & "Go Wide" Processing Instructions. [section, text] -->
+
+<!ELEMENT WEFFDNOP - - (HED, P, P*)>
+<!-- Effective Date Note that spans two columns.  Appears only in 
+     the printed version, not in the ECFR.  This will be removed 
+     from the .DTD when we implement the new "Go Normal," "Go 
+     Turn," & "Go Wide" Processing Instructions. [section, text] -->
+
+<!ELEMENT WHED     - o (#PCDATA | AC | E 
+                      | FR | FTREF 
+                      | H | PRTPAGE | SU)*>
+<!-- Head that spans two columns.  This will be removed from the 
+     .DTD when we implement the new "Go Normal," "Go Turn," & "Go 
+     Wide" Processing Instructions. [annex, appendix, attach, 
+     attach, enclo, exhibit, figure, guide, part, sched, sfar, 
+     supple, table] -->
+
+<!ELEMENT WIDE     - - (#PCDATA | EAR?, 
+                        (AMDPAR 
+                       | FNC | FNP | FP 
+                       | FP-1 | FP-2 | FP-DASH 
+                       | HD1 | HD2 | HD3 | LHD1
+                       | HED | E
+                       | LDRLINE 
+                       | P | PRTPAGE | Q 
+                       | RESERVED | RULE 
+                       | SECTION 
+                       | SFP | SP | WSECT 
+                       | (PRE?, GPOTABLE))+)>
+<!-- Used to force entries to span two columns.  This entire 
+     model will be removed from the .DTD when we implement the 
+     new "Go Normal," "Go Turn," & "Go Wide" Processing 
+     Instructions. [annex, appendix, attach, enclo, example, 
+     exhibit, extract, figure, guide, regtext, sched, section, 
+     sfar, subchap, supple, table, text] -->
+
+<!ELEMENT WSECT    - o (BIBINF?, PRTPAGE?, 
+                        SECTNO, SUBJECT, EXT-XREF?)>
+  <!ATTLIST WSECT    CHRCNT  CDATA  #IMPLIED>
+<!-- Section Number and Section Subject head that spans two 
+     columns. The Attribute denotes the file size of the data in 
+     the Section to be retrieved, and is used for ECFR only.  
+     This will be removed from the .DTD when we implement the new 
+     "Go Normal," "Go Turn," & "Go Wide" Processing Instructions. 
+     [wide] -->
+
+<!ELEMENT YEAR     - o (#PCDATA)>
+<!-- Year of publication head in "List of Sections Affected" 
+     material in Backmatter. [pubyear] -->
+
+<!ELEMENT CFRGRANULE     - o (#PCDATA)>
+
+<!ELEMENT PROC     - o (#PCDATA)>
+
+<!ELEMENT EXECORDR     - o (#PCDATA)>
+
+<!ELEMENT EXECORDS     - o (#PCDATA | LRH | RRH | PRTPAGE | EXEC)*>
+
+<!ELEMENT EXEC     - o (#PCDATA)>
+
+<!ELEMENT PNOTICE     - o (#PCDATA)>
+
+<!ELEMENT DETNO     - o (#PCDATA)>
+
+<!ELEMENT TABLHED     - o (#PCDATA)>
+
+<!-- =================== END OF THE CFRDOC DTD =================== -->
+
+]>
+ 
