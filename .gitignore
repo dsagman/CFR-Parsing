@@ -1,6 +1,7 @@
 **/.DS_Store
 cfr/
 embeddings/
+nltk/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
